@@ -1,5 +1,12 @@
 package ir.khaled.myleitner.Helper;
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import ir.khaled.myleitner.Socket.SocketConnection;
+
 /**
  * Created by khaled.bakhtiari on 4/29/2014.
  */
@@ -22,5 +29,20 @@ public class LogHelper {
             return;
 
         System.out.println("client#" + clientId + " " + log);
+    }
+    public static Logger getLoggerSocketConnection() {
+        Logger logger = Logger.getLogger(SocketConnection.class.getName());
+        logger.addHandler(getFileHandler(SocketConnection.class.getName()));
+        logger.setLevel(Level.ALL);
+        return logger;
+    }
+
+    private static FileHandler getFileHandler(String fileName) {
+        try {
+            return new FileHandler(fileName + ".%u.%g.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

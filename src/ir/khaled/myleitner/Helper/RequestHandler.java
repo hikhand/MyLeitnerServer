@@ -20,6 +20,7 @@ public class RequestHandler {
     private static final String METHOD_WELCOME = "welcome";
     private static final String METHOD_PING = "ping";
     private static final String METHOD_REGISTER_DEVICE = "registerDevice";
+    private static final String METHOD_ADD_CARD = "addCard";
 
     private Request request;
     private OutputStreamWriter streamWriter;
@@ -57,6 +58,8 @@ public class RequestHandler {
             handleWelcome();
         } else if (request.requestName.equals(METHOD_REGISTER_DEVICE)) {
             handleRegisterDevice();
+        } else if (request.requestName.equals(METHOD_ADD_CARD)) {
+            handleAddCard();
         } else {
             handleNoSuchMethod();
         }
@@ -89,6 +92,12 @@ public class RequestHandler {
             response = new Response(ErrorHelper.SQL_DEVICE, "error SQL   registerDevice. error : " + e.toString());
             response.sendResponse(streamWriter);
         }
+    }
+
+    private void handleAddCard() throws IOException {
+        Response<Boolean> response = new Response<Boolean>(true);
+        response.result = true;
+        response.sendResponse(streamWriter);
     }
 
     private boolean isDeviceAllowed() throws IOException{

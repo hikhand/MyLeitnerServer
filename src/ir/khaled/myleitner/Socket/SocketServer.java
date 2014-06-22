@@ -31,7 +31,7 @@ public class SocketServer implements SocketConnection.ISocketConnectionListener 
             return;
 
         try {
-            mListener = new ServerSocket(44485);
+            mListener = new ServerSocket(4455);
             LogHelper.logD("Server started.");
             while (true) {
                 SocketConnection socketConnection = new SocketConnection(mListener.accept(), mSocketConnections.size() + 1, this);

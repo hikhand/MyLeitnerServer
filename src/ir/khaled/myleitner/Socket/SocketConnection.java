@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 import ir.khaled.myleitner.Helper.LogHelper;
 import ir.khaled.myleitner.Helper.RequestHandler;
@@ -16,6 +17,8 @@ import ir.khaled.myleitner.model.Request;
  * Created by khaled.bakhtiari on 4/29/2014.
  */
 public class SocketConnection extends Thread {
+    private static Logger logger = LogHelper.getLoggerSocketConnection();
+    private static Gson gson = new Gson();
     public static final String EOF = "\u001a\uFFFF\u001A\uFFFF";
     private Socket mSocket;
     private int mSocketId;
@@ -34,6 +37,7 @@ public class SocketConnection extends Thread {
         mSocket = socket;
         mSocketId = socketId;
         mSocketConnectionListener = connectionClosedListener;
+        logger.fine("new client added with id:#" + mSocketId + " and Ip Address: " + mSocket.getInetAddress());
         LogHelper.logD("new client added with id:#" + mSocketId + " and Ip Address: " + mSocket.getInetAddress());
     }
 
@@ -42,14 +46,17 @@ public class SocketConnection extends Thread {
         try {
             onConnectionEstablished();
         } catch (Exception e) {
+            logger.info("client#" + mSocketId + " ip: " + mSocket.getInetAddress() + " eror: " + e.toString());
             LogHelper.logD(mSocketId, "ip: " + mSocket.getInetAddress() + " eror: " + e.toString());
         } finally {
             try {
                 mSocket.close();
             } catch (IOException e) {
+                logger.info("Couldn't close the socket#" + mSocketId + ", what's going on? : " + e.toString());
                 LogHelper.logD("Couldn't close the socket#" + mSocketId + ", what's going on? : " + e.toString());
             }
             mSocketConnectionListener.onSocketConnectionClosed(this);
+            logger.info("Connection with client#" + mSocketId + " closed");
             LogHelper.logD("Connection with client#" + mSocketId + " closed");
         }
     }
@@ -113,13 +120,15 @@ public class SocketConnection extends Thread {
     }
 
     private void handleRequest(String jsonRequest) throws IOException {
+        logger.fine("client#" + mSocketId + " handling request : " + jsonRequest);
         LogHelper.logD(mSocketId, "handling request : " + jsonRequest);
         if (jsonRequest == null || jsonRequest.length() == 0) {
+            logger.info("client#" + mSocketId + " empty request, ignoring.");
             LogHelper.logD(mSocketId, "empty request, ignoring.");
             return;
         }
 
-        Request request = new Gson().fromJson(jsonRequest, Request.class);
+        Request request = gson.fromJson(jsonRequest, Request.class);
 
         isConnectionVerified = new RequestHandler(request, streamWriter).handle(isConnectionVerified);
     }
