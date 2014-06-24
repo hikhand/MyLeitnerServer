@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 
 import ir.khaled.myleitner.Helper.LogHelper;
 import ir.khaled.myleitner.Helper.RequestHandler;
+import ir.khaled.myleitner.Helper.Util;
 import ir.khaled.myleitner.model.Request;
 
 /**
@@ -89,12 +90,9 @@ public class SocketConnection extends Thread {
             throw new IOException("stream from client has been closed.");
         }
         String[] results = result.split(EOF);
-        if (result.length() < 2) {
-            handleRequest(result);
-        } else {
-            for (String res : results) {
+        for (String res : results) {
+            if (res.length() > 0)
                 handleRequest(res);
-            }
         }
     }
 
@@ -122,7 +120,7 @@ public class SocketConnection extends Thread {
     private void handleRequest(String jsonRequest) throws IOException {
         logger.fine("client#" + mSocketId + " handling request : " + jsonRequest);
         LogHelper.logD(mSocketId, "handling request : " + jsonRequest);
-        if (jsonRequest == null || jsonRequest.length() == 0) {
+        if (Util.isEmpty(jsonRequest)) {
             logger.info("client#" + mSocketId + " empty request, ignoring.");
             LogHelper.logD(mSocketId, "empty request, ignoring.");
             return;
