@@ -9,7 +9,7 @@ public class DatabaseHelper {
     private static DatabaseHelper instance;
     private static final String DATABASE_NAME = "myleitner";
 
-    public Connection connection;
+    private Connection connection;
 
 
     public static DatabaseHelper getInstance() {
@@ -18,23 +18,17 @@ public class DatabaseHelper {
         return instance;
     }
 
+    public static Connection getConnection() {
+        return getInstance().connection;
+    }
+
     private DatabaseHelper() {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/myleitner", "root", "");
-//            Statement statement = connection.createStatement();
-//            statement.execute("CREATE DATABASE IF NOT EXISTS " + DATABASE_NAME);
-//            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
-//    public ResultSet query(String query) throws SQLException {
-//        Statement statement = connection.createStatement();
-//        statement.executeQuery(query);
-//        return statement.getResultSet();
-//    }
-
 
     private boolean isValid() {
         try {

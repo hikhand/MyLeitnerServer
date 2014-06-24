@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.sql.SQLException;
 
+import ir.khaled.myleitner.model.Card;
 import ir.khaled.myleitner.model.Device;
 import ir.khaled.myleitner.model.LastChanges;
 import ir.khaled.myleitner.model.Request;
@@ -87,17 +88,22 @@ public class RequestHandler {
         try {
             response = Device.handleRegisterDevice(request);
             response.sendResponse(streamWriter);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            response = new Response(ErrorHelper.SQL_DEVICE, "error SQL   registerDevice. error : " + e.toString());
+            response = new Response(ErrorHelper.SQL_DEVICE, "error registerDevice. error : " + e.toString());
             response.sendResponse(streamWriter);
         }
     }
 
-    private void handleAddCard() throws IOException {
-        Response<Boolean> response = new Response<Boolean>(true);
-        response.result = true;
-        response.sendResponse(streamWriter);
+    private void handleAddCard() throws IOException {//TODO make it real
+        try {
+            Response<Boolean> response = Card.addCard(request);
+            response.sendResponse(streamWriter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Response response = new Response(ErrorHelper.EXCEPTION_ADD_CARD, "Exception addCard. error : " + e.toString());
+            response.sendResponse(streamWriter);
+        }
     }
 
     private boolean isDeviceAllowed() throws IOException{

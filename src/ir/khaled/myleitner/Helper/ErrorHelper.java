@@ -8,4 +8,6 @@ public class ErrorHelper {
     public static final int UNKNOWN_DEVICE = 2;
     public static final int NO_SUCH_METHOD = 3;
     public static final int SQL_DEVICE = 4;
+    public static final int INVALID_PARAM = 5;
+    public static final int EXCEPTION_ADD_CARD = 5;
 }

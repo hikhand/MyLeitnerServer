@@ -9,6 +9,7 @@ import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.lang.reflect.Type;
 
+import ir.khaled.myleitner.Helper.LogHelper;
 import ir.khaled.myleitner.Socket.SocketConnection;
 
 /**
@@ -23,12 +24,21 @@ public class Response<T> implements Serializable {
     public Response() {
     }
 
+//    /**
+//     * creates an instance witch only has the success boolean flag set.
+//     * @param success whether to set the success flag to true or fasle
+//     */
+//    public Response(boolean success) {
+//        this.success = success;
+//    }
+
     /**
-     * creates an instance witch only has the success boolean flag set.
-     * @param success whether to set the success flag to true or fasle
+     * creates a new instance which {@link #success} is true.
+     * @param result response's result
      */
-    public Response(boolean success) {
-        this.success = success;
+    public Response(T result) {
+        this.success = true;
+        this.result = result;
     }
 
     /**
@@ -50,6 +60,7 @@ public class Response<T> implements Serializable {
 
     public void sendResponse(OutputStreamWriter streamWriter) throws IOException {
         String json = getJson();
+        LogHelper.logD("sending response: " + json);
         json += SocketConnection.EOF;
         streamWriter.write(json);
         streamWriter.flush();
