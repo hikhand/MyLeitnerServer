@@ -6,7 +6,6 @@ package ir.khaled.myleitner.model;
 public class User {
     public static final int NO_USER = -1;
     public int id;
-    public int userId;
     public String firstName;
     public String lastName;
     public String nickName;

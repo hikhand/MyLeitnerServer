@@ -10,4 +10,5 @@ public class ErrorHelper {
     public static final int SQL_DEVICE = 4;
     public static final int INVALID_PARAM = 5;
     public static final int EXCEPTION_ADD_CARD = 5;
+    public static final int SQL_ERROR_LAST_CARDS = 6;
 }

@@ -3,6 +3,7 @@ package ir.khaled.myleitner.Helper;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import ir.khaled.myleitner.model.Card;
 import ir.khaled.myleitner.model.Device;
@@ -22,6 +23,7 @@ public class RequestHandler {
     private static final String METHOD_PING = "ping";
     private static final String METHOD_REGISTER_DEVICE = "registerDevice";
     private static final String METHOD_ADD_CARD = "addCard";
+    private static final String METHOD_LAST_CARDS = "lastCards";
 
     private Request request;
     private OutputStreamWriter streamWriter;
@@ -61,6 +63,8 @@ public class RequestHandler {
             handleRegisterDevice();
         } else if (request.requestName.equals(METHOD_ADD_CARD)) {
             handleAddCard();
+        } else if (request.requestName.equals(METHOD_LAST_CARDS)) {
+            handleLastCards();
         } else {
             handleNoSuchMethod();
         }
@@ -90,18 +94,32 @@ public class RequestHandler {
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            response = new Response(ErrorHelper.SQL_DEVICE, "error registerDevice. error : " + e.toString());
+            response = Response.error(ErrorHelper.SQL_DEVICE, "error registerDevice. error: " + e.toString());
             response.sendResponse(streamWriter);
         }
     }
 
-    private void handleAddCard() throws IOException {//TODO make it real
+    private void handleAddCard() throws IOException {
         try {
             Response<Boolean> response = Card.addCard(request);
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            Response response = new Response(ErrorHelper.EXCEPTION_ADD_CARD, "Exception addCard. error : " + e.toString());
+            Response response = Response.error(ErrorHelper.EXCEPTION_ADD_CARD, "Exception addCard. error: " + e.toString());
+            response.sendResponse(streamWriter);
+        }
+    }
+
+    /**
+     * handle the request which gets a list of cards from database and returns to client
+     */
+    private void handleLastCards() throws IOException {
+        try {
+            Response<ArrayList<Card>> response = Card.getLastCards(request);
+            response.sendResponse(streamWriter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Response response = Response.error(ErrorHelper.EXCEPTION_ADD_CARD, "Exception lastCards. error: " + e.toString());
             response.sendResponse(streamWriter);
         }
     }
@@ -114,12 +132,12 @@ public class RequestHandler {
                 return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            Response response = new Response(ErrorHelper.SQL_DEVICE, "error performing SQL operation for deviceCheck. error : " + e.toString());
+            Response response = Response.error(ErrorHelper.SQL_DEVICE, "error performing SQL operation for deviceCheck. error: " + e.toString());
             response.sendResponse(streamWriter);
             return false;
         }
 
-        Response response = new Response(ErrorHelper.UNKNOWN_DEVICE, "the device is unknown!");
+        Response response = Response.error(ErrorHelper.UNKNOWN_DEVICE, "the device is unknown!");
         response.sendResponse(streamWriter);
         return false;
     }
@@ -131,12 +149,12 @@ public class RequestHandler {
      * ERRORS
      */
     private void handleNoSuchMethod() throws IOException {
-        Response response = new Response(ErrorHelper.NO_SUCH_METHOD, "no such method exists to handle the request.");
+        Response response = Response.error(ErrorHelper.NO_SUCH_METHOD, "no such method exists to handle the request.");
         response.sendResponse(streamWriter);
     }
 
     private void handleInvalidRequest() throws IOException {
-        Response response = new Response(ErrorHelper.INVALID_REQUEST_OBJECT, "the request object is invalid and can't be handled");
+        Response response = Response.error(ErrorHelper.INVALID_REQUEST_OBJECT, "the request object is invalid and can't be handled");
         response.sendResponse(streamWriter);
     }
 

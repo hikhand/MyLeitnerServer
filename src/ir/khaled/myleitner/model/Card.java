@@ -3,8 +3,10 @@ package ir.khaled.myleitner.model;
 import com.google.gson.Gson;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.ArrayList;
 
 import ir.khaled.myleitner.Helper.DatabaseHelper;
 import ir.khaled.myleitner.Helper.ErrorHelper;
@@ -17,12 +19,16 @@ import ir.khaled.myleitner.response.Response;
 public class Card {
     private static final Gson gson = new Gson();
     private static final String PARAM_CARD = "card";
+    private static final String PARAM_ORDER = "order";
+    private static final String PARAM_LIMIT = "limit";
+    private static final int DEFAULT_LIST_LIMIT = 30;
     private static PreparedStatement statementAddCard;
+    private static PreparedStatement statementLastCards;
 
     public int id;
-    public int userId;
+    public User user;
     public int leitnerId;
-    public int createTime;
+    public long createTime;
     public int checkTime;
     public int likeCount;
     public int boxIndex;
@@ -37,98 +43,172 @@ public class Card {
     public Comment[] comments;
     public Example[] examples;
 
-    private PreparedStatement statement;
 
+    /**
+     * add card from request to database
+     *
+     * @param request the request from client
+     * @return response to be sent to client
+     * @throws Exception on any failure while deserializing json card from request to object in method {@link #getCardFromJson(String)}
+     */
     public static Response<Boolean> addCard(Request request) throws Exception {
         String jsonCard = request.getParamValue(PARAM_CARD);
         if (Util.isEmpty(jsonCard))
-            return new Response<Boolean>(ErrorHelper.INVALID_PARAM, "Param '" + PARAM_CARD + "' is empty");
+            return Response.error(ErrorHelper.INVALID_PARAM, "Param '" + PARAM_CARD + "' is empty");
 
-        return getCard(jsonCard).addCardToDatabase(request.getParamValue(Device.PARAM_UDK));
+        return getCardFromJson(jsonCard).addCardToDatabase(request.getParamValue(Device.PARAM_UDK));
     }
 
-    private static Card getCard(String jsonCard) throws Exception {
+    /**
+     * converts a card json to {@link ir.khaled.myleitner.model.Card}
+     *
+     * @param jsonCard card in json
+     * @return card object
+     * @throws Exception on any failure while deserializing json to object
+     */
+    private static Card getCardFromJson(String jsonCard) throws Exception {
         return gson.fromJson(jsonCard, Card.class);
     }
 
     /**
+     * returns the list of latest added cards
+     *
+     * @param request the request from client
+     * @return list of latest cards
+     */
+    public static Response<ArrayList<Card>> getLastCards(Request request) throws SQLException {
+        int limit = getLimitFromRequest(request);
+
+        ArrayList<Card> lastCards = getLastCardsFromDatabase(limit);
+        if (lastCards == null) {
+            return Response.error(ErrorHelper.SQL_ERROR_LAST_CARDS, "couldn't get the last cards from database, request was: " + request.toString());
+        } else {
+            return Response.success(lastCards);
+        }
+    }
+
+    /**
+     * @param request the request from client the get limit value from
+     * @return the limit value from request by the key of {@link #PARAM_LIMIT} if doesn't exist in request the default {@link #DEFAULT_LIST_LIMIT} will be returned
+     */
+    private static int getLimitFromRequest(Request request) {
+        String limit = request.getParamValue(PARAM_LIMIT);
+
+        int intLimit;
+        try {
+            intLimit = Integer.parseInt(limit);
+        } catch (Exception ignored) {
+            intLimit = DEFAULT_LIST_LIMIT;
+        }
+        return intLimit;
+    }
+
+    private static ArrayList<Card> getLastCardsFromDatabase(int limit) throws SQLException {
+        PreparedStatement statement = getStatementLastCards();
+        statement.setInt(1, limit);
+
+        ArrayList<Card> lastCards = new ArrayList<Card>();
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.first();
+        while (resultSet.next()) {
+            Card card = new Card();
+            card.id = resultSet.getInt(1);
+            card.title = resultSet.getString(2);
+            card.front = resultSet.getString(3);
+            card.back = resultSet.getString(4);
+            card.createTime = resultSet.getTime(5).getTime();
+            card.likeCount = resultSet.getInt(6);
+            card.user = new User();
+            card.user.id = resultSet.getInt(7);
+            card.user.displayName = resultSet.getString(8);
+            card.user.picture = resultSet.getString(9);
+            lastCards.add(card);
+        }
+        resultSet.close();
+        return lastCards;
+    }
+
+    /**
      * set the device to statement
+     *
      * @param position position in statement
-     * @param udk device's udk
+     * @param udk      device's udk
      * @throws SQLException on any sql failure
      */
-    private Card setDevice(int position, String udk) throws SQLException {
+    private Card setDevice(PreparedStatement statement, int position, String udk) throws SQLException {
         statement.setString(position, udk);
         return this;
     }
 
     /**
      * set user to the statement
+     *
      * @param position position in statement
-     * @param userId user's id
+     * @param userId   user's id
      * @throws SQLException on any sql failure
      */
-    private Card setUser(int position, int userId) throws SQLException {
+    private Card setUser(PreparedStatement statement, int position, int userId) throws SQLException {
         statement.setInt(position, userId);
         return this;
     }
 
     /**
      * set card's title to statement from {@link #title}
+     *
      * @param position position in statement
      * @throws SQLException on any sql failure
      */
-    private Card setTitle(int position) throws SQLException {
+    private Card setTitle(PreparedStatement statement, int position) throws SQLException {
         statement.setString(position, title);
         return this;
     }
 
     /**
      * set card's front to statement from {@link #front}
+     *
      * @param position position in statement
      * @throws SQLException on any sql failure
      */
-    private Card setFront(int position) throws SQLException {
+    private Card setFront(PreparedStatement statement, int position) throws SQLException {
         statement.setString(position, front);
         return this;
     }
 
     /**
      * set card's back to statement from {@link #back}
+     *
      * @param position position in statement
      * @throws SQLException on any sql failure
      */
-    private Card setBack(int position) throws SQLException {
+    private Card setBack(PreparedStatement statement, int position) throws SQLException {
         statement.setString(position, back);
         return this;
     }
 
     /**
-     *
-     *
      * @param udk the devices that this card has been added from
      * @return a new instance of {@link ir.khaled.myleitner.response.Response} with result of true
      * @throws Exception on any failure
      */
     private Response<Boolean> addCardToDatabase(String udk) throws Exception {
-        statement = getStatementAddCard();
+        PreparedStatement statement = getStatementAddCard();
 
-        setDevice(1, udk);
+        setDevice(statement, 1, udk);
 
         int userId = User.getUserId(udk);
         //if user exists set card's user otherwise set to null
         if (userId == User.NO_USER)
             statement.setNull(2, Types.INTEGER);
-        else setUser(2, userId);
+        else setUser(statement, 2, userId);
 
-        setTitle(3);
-        setFront(4);
-        setBack(5);
+        setTitle(statement, 3);
+        setFront(statement, 4);
+        setBack(statement, 5);
 
         //execute insert sql to database by statement
         statement.executeUpdate();
 
-        return new Response<Boolean>(true);
+        return Response.success(true);
     }
 
     /**
@@ -137,8 +217,19 @@ public class Card {
      */
     private PreparedStatement getStatementAddCard() throws SQLException {
         if (statementAddCard == null) {
-            statementAddCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO card (DEVICE_UDK, USER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?)");
+            statementAddCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO CARD (DEVICE_UDK, USER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?)");
         }
         return statementAddCard;
+    }
+
+    private static PreparedStatement getStatementLastCards() throws SQLException {
+        if (statementLastCards == null) {
+            statementLastCards = DatabaseHelper.getConnection().prepareStatement(
+                    "SELECT CARD.ID, CARD.TITLE, CARD.FRONT, CARD.BACK, CARD.CREATE_TIME, CARD.LIKE_COUNT, " +
+                            "USER.ID, USER.DISPLAY_NAME, USER.PICTURE " +
+                            "FROM CARD INNER JOIN USER ON USER.ID = CARD.USER_ID " +
+                            "ORDER BY CARD.CREATE_TIME DESC LIMIT ?");
+        }
+        return statementLastCards;
     }
 }

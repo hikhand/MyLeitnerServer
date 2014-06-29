@@ -83,14 +83,23 @@ public class Device {
         return response;
     }
 
+    /**
+     * @param udk device's UDK
+     * @return if didn't found returns 0
+     * @throws Exception on any failure mostly SQL
+     */
     public static int getDeviceId(String udk) throws Exception {
         PreparedStatement statement = getStatementDeviceId();
         statement.setString(1, udk);
         ResultSet resultSet = statement.executeQuery();
 
         //go to first
-        resultSet.first();
-        return resultSet.getInt(COLUMN_ID);
+        int deviceId = 0;
+        if (resultSet.first()) {
+            deviceId = resultSet.getInt(COLUMN_ID);
+        }
+        resultSet.close();
+        return deviceId;
     }
 
     /**
@@ -107,9 +116,13 @@ public class Device {
         if (resultSet == null)
             return false;
 
-        if (resultSet.first())
-            return resultSet.getString(COLUMN_UDK) != null;
-        return false;
+        boolean isValid = false;
+        if (resultSet.first()) {
+            isValid = resultSet.getString(COLUMN_UDK) != null;
+        }
+        resultSet.close();
+
+        return isValid;
     }
 
     private static DeviceInfo getDeviceInfo(String jsonDeviceInfo) throws Exception {

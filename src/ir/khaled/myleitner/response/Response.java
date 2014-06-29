@@ -24,48 +24,31 @@ public class Response<T> implements Serializable {
     public Response() {
     }
 
-//    /**
-//     * creates an instance witch only has the success boolean flag set.
-//     * @param success whether to set the success flag to true or fasle
-//     */
-//    public Response(boolean success) {
-//        this.success = success;
-//    }
-
-    /**
-     * creates a new instance which {@link #success} is true.
-     * @param result response's result
-     */
-    public Response(T result) {
-        this.success = true;
-        this.result = result;
-    }
-
     /**
      * creates an instance of {@link Response} this could be used to send responses back to client.
      *
-     * @param errorCode    to be used in response
-     * @param message to be used in response
+     * @param errorCode to be used in response
+     * @param message   to be used in response
      */
-    public Response(int errorCode, String message) {
-        this.errorCode = errorCode;
-        this.message = message;
-        success = false;
+    public static <T> Response<T> error(int errorCode, String message) {
+        Response<T> response = new Response<T>();
+        response.success = false;
+        response.errorCode = errorCode;
+        response.message = message;
+        return response;
     }
 
-    public String getJson() {
-        Type myType = new TypeToken<Response<T>>() {}.getType();
-        return new Gson().toJson(this, myType);
+    /**
+     * creates a new instance which {@link #success} is true.
+     *
+     * @param result response's result
+     */
+    public static <T> Response<T> success(T result) {
+        Response<T> response = new Response<T>();
+        response.success = true;
+        response.result = result;
+        return response;
     }
-
-    public void sendResponse(OutputStreamWriter streamWriter) throws IOException {
-        String json = getJson();
-        LogHelper.logD("sending response: " + json);
-        json += SocketConnection.EOF;
-        streamWriter.write(json);
-        streamWriter.flush();
-    }
-
 
     /**
      * send object to the outputStream throws exception on any failure.
@@ -83,5 +66,19 @@ public class Response<T> implements Serializable {
             throw new NullPointerException("Response parameter is null.");
 
         outputStream.writeObject(response);
+    }
+
+    public String getJson() {
+        Type myType = new TypeToken<Response<T>>() {
+        }.getType();
+        return new Gson().toJson(this, myType);
+    }
+
+    public void sendResponse(OutputStreamWriter streamWriter) throws IOException {
+        String json = getJson();
+        LogHelper.logD("sending response: " + json);
+        json += SocketConnection.EOF;
+        streamWriter.write(json);
+        streamWriter.flush();
     }
 }
