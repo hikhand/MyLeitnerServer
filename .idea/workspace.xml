@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31134700-c3a6-4695-941b-34839dab0062" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyLeitnerServer.iws" />
@@ -49,44 +52,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29429734" vertical-offset="383" max-vertical-offset="2016">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1433" max-vertical-offset="2415">
+              <caret line="106" column="107" selection-start-line="106" selection-start-column="107" selection-end-line="106" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1404478411025" expanded="true" signature="3581:3658" placeholder="SELECT * FRO..USER..." />
-                <marker date="1404478411025" expanded="true" signature="3740:3798" placeholder="SELECT * FRO..USER..." />
+                <marker date="1404484291375" expanded="true" signature="4042:4119" placeholder="SELECT * FRO..USER..." />
+                <marker date="1404484291375" expanded="true" signature="4201:4259" placeholder="SELECT * FRO..USER..." />
+                <marker date="1404484291375" expanded="true" signature="4502:4527" placeholder="SELECT ID FR..USER..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Device.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Device.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1953">
-              <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.5509165" vertical-offset="887" max-vertical-offset="1869">
+              <caret line="156" column="43" selection-start-line="156" selection-start-column="43" selection-end-line="156" selection-end-column="43" />
               <folding>
                 <element signature="docComment;class#Device#0" expanded="false" />
                 <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
-                <element signature="docComment;method#getDeviceId#0;class#Device#0" expanded="false" />
-                <element signature="method#getDeviceId#0;class#Device#0" expanded="false" />
+                <element signature="method#handleRegisterDevice#0;class#Device#0" expanded="false" />
                 <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
                 <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
                 <element signature="method#getDeviceInfo#0;class#Device#0" expanded="false" />
                 <element signature="method#getStatementRegisterDevice#0;class#Device#0" expanded="false" />
-                <element signature="method#getStatementDeviceId#0;class#Device#0" expanded="false" />
-                <element signature="method#getStatementDeviceCheck#0;class#Device#0" expanded="false" />
                 <element signature="class#DeviceInfo#0;class#Device#0" expanded="false" />
                 <element signature="class#SystemInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
                 <element signature="class#ProcessorInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
                 <element signature="class#MemoryInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
                 <element signature="class#DisplayInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
-                <marker date="1404476470146" expanded="false" signature="5172:5605" placeholder="INSERT INTO ..." />
-                <marker date="1404476470146" expanded="false" signature="5883:5918" placeholder="SELECT ID FR..device..." />
-                <marker date="1404476470146" expanded="false" signature="6199:6233" placeholder="SELECT UDK F..DEVICE..." />
+                <marker date="1404484291353" expanded="false" signature="5612:6045" placeholder="INSERT INTO ..." />
+                <marker date="1404484291353" expanded="false" signature="6323:6358" placeholder="SELECT ID FR..device..." />
+                <marker date="1404484291353" expanded="false" signature="6639:6673" placeholder="SELECT UDK F..DEVICE..." />
+                <marker date="1404484291353" expanded="true" signature="6954:7012" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -95,8 +97,8 @@
       <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="2163">
-              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1181" max-vertical-offset="2163">
+              <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
               <folding>
                 <element signature="docComment;class#Card#0" expanded="false" />
                 <element signature="docComment;method#addCard#0;class#Card#0" expanded="false" />
@@ -130,9 +132,12 @@
       <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <folding>
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#453#454#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,13 +180,13 @@
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketServer.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketConnection.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
       </list>
     </option>
@@ -649,7 +654,7 @@
       <workItem from="1404387756869" duration="1167000" />
       <workItem from="1404465899555" duration="596000" />
       <workItem from="1404473250495" duration="10000" />
-      <workItem from="1404473305759" duration="5102000" />
+      <workItem from="1404473305759" duration="8157000" />
     </task>
     <task id="LOCAL-00001" summary="new log system &#10;addCard method&#10;">
       <created>1403467477469</created>
@@ -663,11 +668,15 @@
       <created>1404478367229</created>
       <updated>1404478367229</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="to do assign device to user after login">
+      <created>1404478430567</created>
+      <updated>1404478430567</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56981000" />
+    <option name="totallyTimeSpent" value="60036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -720,7 +729,8 @@
     <MESSAGE value="new log system &#10;addCard method&#10;" />
     <MESSAGE value="som refactoring" />
     <MESSAGE value="login user added" />
-    <option name="LAST_COMMIT_MESSAGE" value="login user added" />
+    <MESSAGE value="to do assign device to user after login" />
+    <option name="LAST_COMMIT_MESSAGE" value="to do assign device to user after login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1040,7 +1050,7 @@
         <state vertical-scroll-proportion="0.57230145" vertical-offset="236" max-vertical-offset="1344">
           <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1049,14 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3329939" vertical-offset="723" max-vertical-offset="27300">
           <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1085,66 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1953">
-          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-          <folding>
-            <element signature="docComment;class#Device#0" expanded="false" />
-            <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
-            <element signature="docComment;method#getDeviceId#0;class#Device#0" expanded="false" />
-            <element signature="method#getDeviceId#0;class#Device#0" expanded="false" />
-            <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
-            <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
-            <element signature="method#getDeviceInfo#0;class#Device#0" expanded="false" />
-            <element signature="method#getStatementRegisterDevice#0;class#Device#0" expanded="false" />
-            <element signature="method#getStatementDeviceId#0;class#Device#0" expanded="false" />
-            <element signature="method#getStatementDeviceCheck#0;class#Device#0" expanded="false" />
-            <element signature="class#DeviceInfo#0;class#Device#0" expanded="false" />
-            <element signature="class#SystemInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
-            <element signature="class#ProcessorInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
-            <element signature="class#MemoryInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
-            <element signature="class#DisplayInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
-            <marker date="1404476470146" expanded="false" signature="5172:5605" placeholder="INSERT INTO ..." />
-            <marker date="1404476470146" expanded="false" signature="5883:5918" placeholder="SELECT ID FR..device..." />
-            <marker date="1404476470146" expanded="false" signature="6199:6233" placeholder="SELECT UDK F..DEVICE..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1181" max-vertical-offset="2163">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Card#0" expanded="false" />
-            <element signature="docComment;method#addCard#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#getCardFromJson#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#getLastCards#0;class#Card#0" expanded="false" />
-            <element signature="method#getLastCards#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#getLimitFromRequest#0;class#Card#0" expanded="false" />
-            <element signature="method#getLimitFromRequest#0;class#Card#0" expanded="false" />
-            <element signature="method#getLastCardsFromDatabase#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#setDevice#0;class#Card#0" expanded="false" />
-            <element signature="method#setDevice#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#setUser#0;class#Card#0" expanded="false" />
-            <element signature="method#setUser#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#setTitle#0;class#Card#0" expanded="false" />
-            <element signature="method#setTitle#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#setFront#0;class#Card#0" expanded="false" />
-            <element signature="method#setFront#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#setBack#0;class#Card#0" expanded="false" />
-            <element signature="method#setBack#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#addCardToDatabase#0;class#Card#0" expanded="false" />
-            <element signature="docComment;method#getStatementAddCard#0;class#Card#0" expanded="false" />
-            <element signature="method#getStatementAddCard#0;class#Card#0" expanded="false" />
-            <element signature="method#getStatementLastCards#0;class#Card#0" expanded="false" />
-            <marker date="1404476076042" expanded="false" signature="7506:7587" placeholder="INSERT INTO ..." />
-            <marker date="1404476076042" expanded="false" signature="7882:8198" placeholder="SELECT CARD...CARD..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
@@ -1166,8 +1108,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="12273" max-vertical-offset="21777">
           <caret line="633" column="16" selection-start-line="633" selection-start-column="16" selection-end-line="633" selection-end-column="16" />
           <folding>
-            <element signature="e#26470#26471#0" expanded="true" />
-            <element signature="e#26528#26529#0" expanded="true" />
+            <element signature="e#26470#26471#0" expanded="false" />
+            <element signature="e#26528#26529#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1201,14 +1143,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1181" max-vertical-offset="2163">
+          <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
+          <folding>
+            <element signature="docComment;class#Card#0" expanded="false" />
+            <element signature="docComment;method#addCard#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getCardFromJson#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getLastCards#0;class#Card#0" expanded="false" />
+            <element signature="method#getLastCards#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+            <element signature="method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+            <element signature="method#getLastCardsFromDatabase#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setDevice#0;class#Card#0" expanded="false" />
+            <element signature="method#setDevice#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setUser#0;class#Card#0" expanded="false" />
+            <element signature="method#setUser#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setTitle#0;class#Card#0" expanded="false" />
+            <element signature="method#setTitle#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setFront#0;class#Card#0" expanded="false" />
+            <element signature="method#setFront#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setBack#0;class#Card#0" expanded="false" />
+            <element signature="method#setBack#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#addCardToDatabase#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getStatementAddCard#0;class#Card#0" expanded="false" />
+            <element signature="method#getStatementAddCard#0;class#Card#0" expanded="false" />
+            <element signature="method#getStatementLastCards#0;class#Card#0" expanded="false" />
+            <marker date="1404476076042" expanded="false" signature="7506:7587" placeholder="INSERT INTO ..." />
+            <marker date="1404476076042" expanded="false" signature="7882:8198" placeholder="SELECT CARD...CARD..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29429734" vertical-offset="383" max-vertical-offset="2016">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1433" max-vertical-offset="2415">
+          <caret line="106" column="107" selection-start-line="106" selection-start-column="107" selection-end-line="106" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1404478411025" expanded="true" signature="3581:3658" placeholder="SELECT * FRO..USER..." />
-            <marker date="1404478411025" expanded="true" signature="3740:3798" placeholder="SELECT * FRO..USER..." />
+            <marker date="1404484291375" expanded="true" signature="4042:4119" placeholder="SELECT * FRO..USER..." />
+            <marker date="1404484291375" expanded="true" signature="4201:4259" placeholder="SELECT * FRO..USER..." />
+            <marker date="1404484291375" expanded="true" signature="4502:4527" placeholder="SELECT ID FR..USER..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5509165" vertical-offset="887" max-vertical-offset="1869">
+          <caret line="156" column="43" selection-start-line="156" selection-start-column="43" selection-end-line="156" selection-end-column="43" />
+          <folding>
+            <element signature="docComment;class#Device#0" expanded="false" />
+            <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
+            <element signature="method#handleRegisterDevice#0;class#Device#0" expanded="false" />
+            <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
+            <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
+            <element signature="method#getDeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="method#getStatementRegisterDevice#0;class#Device#0" expanded="false" />
+            <element signature="class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#SystemInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#ProcessorInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#MemoryInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#DisplayInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <marker date="1404484291353" expanded="false" signature="5612:6045" placeholder="INSERT INTO ..." />
+            <marker date="1404484291353" expanded="false" signature="6323:6358" placeholder="SELECT ID FR..device..." />
+            <marker date="1404484291353" expanded="false" signature="6639:6673" placeholder="SELECT UDK F..DEVICE..." />
+            <marker date="1404484291353" expanded="true" signature="6954:7012" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>

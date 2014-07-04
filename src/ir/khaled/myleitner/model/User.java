@@ -16,6 +16,7 @@ public class User {
     public static final String PARAM_PASSWORD = "password";
     public static final int NO_USER = -1;
     private static PreparedStatement statementLogin;
+    private static PreparedStatement statementUserId;
 
     public int id;
     public String firstName;
@@ -28,23 +29,33 @@ public class User {
     public Device device;
 
     public static int getUserId(String udk) {
+
         return NO_USER;
     }
 
     public static Response<User> loginUser(Request request) throws SQLException {
-        //TODO after login assign this device to user
         String username = request.getParamValue(PARAM_USERNAME);
         String password = request.getParamValue(PARAM_PASSWORD);
 
         Object object = validateUser(username, password);
         if (object instanceof User) {//user successfully logged in
             User loggedInUser = (User) object;
+            assignDeviceToUser(loggedInUser.id, request.getUDK());
             return Response.success(loggedInUser);
         } else if (object instanceof Integer) {//no user with the given username or email exists
             return Response.error(ErrorHelper.USER_DOESNT_EXIST, "no user with the given username or email exists");
         } else {//username and password didn't match
             return Response.error(ErrorHelper.WRONG_USERNAME_PASSWORD, "username or password is wrong");
         }
+    }
+
+    /**
+     * assign the requested device to user using {@link ir.khaled.myleitner.model.Device#assignDeviceToUser(int, int)}
+     * @param udk the device that this request has come from
+     */
+    private static void assignDeviceToUser(int userId, String udk) throws SQLException {
+        int deviceId = Device.getDeviceId(udk);
+        Device.assignDeviceToUser(userId, deviceId);
     }
 
     /**
@@ -89,5 +100,11 @@ public class User {
             statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ? OR USERNAME = ?");
         }
         return statementLogin;
+    }
+
+    private static synchronized PreparedStatement getStatementUserId() {
+        if (statementUserId == null) {
+            statementUserId = DatabaseHelper.getConnection().prepareStatement("SELECT ID FROM USER WHERE ")
+        }
     }
 }

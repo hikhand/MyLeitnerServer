@@ -16,6 +16,10 @@ public class Request {
         return params.get(paramName);
     }
 
+    public String getUDK() {
+        return getParamValue("udk");
+    }
+
     @Override
     public String toString() {
         return "request: " + requestName + "params: " + params.toString();

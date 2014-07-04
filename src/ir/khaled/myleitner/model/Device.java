@@ -20,6 +20,7 @@ public class Device {
     private static PreparedStatement statementDeviceCheck;
     private static PreparedStatement statementRegisterDevice;
     private static PreparedStatement statementDeviceId;
+    private static PreparedStatement statementAssignUser;
     private static Gson gson = new Gson();
     public int id;
     public String udk;
@@ -86,9 +87,9 @@ public class Device {
     /**
      * @param udk device's UDK
      * @return if didn't found returns 0
-     * @throws Exception on any failure mostly SQL
+     * @throws SQLException on any sql failure
      */
-    public static int getDeviceId(String udk) throws Exception {
+    public static int getDeviceId(String udk) throws SQLException {
         PreparedStatement statement = getStatementDeviceId();
         statement.setString(1, udk);
         ResultSet resultSet = statement.executeQuery();
@@ -126,6 +127,18 @@ public class Device {
         return gson.fromJson(jsonDeviceInfo, DeviceInfo.class);
     }
 
+    public static Response<Boolean> assignDeviceToUser(int userId, int deviceId) throws SQLException {
+        PreparedStatement statement = getStatementAssignUser();
+        statement.setInt(1, userId);
+        statement.setInt(2, deviceId);
+
+        //insert user and device into user_device table
+        statement.executeUpdate();
+
+        return Response.success(true);
+    }
+
+
     private static synchronized PreparedStatement getStatementRegisterDevice() throws SQLException {
         if (statementRegisterDevice == null) {
             statementRegisterDevice = DatabaseHelper.getConnection().prepareStatement("INSERT INTO DEVICE (UDK, DENSITY_DPI, SIZE_INCHES, HEIGHT, DENSITY, WIDTH, XDPI, YDPI, STORAGE_EXTERNAL, STORAGE_EXTERNAL_FREE, STORAGE_INTERNAL, RAM_SIZE, CPU_ABI, CPU_ABI2, MAX_FREQUENCY, CORES, ANDROID_ID, BLUETOOTH_ADDRESS, BOARD, BRAND, DEVICE_NAME, DISPLAY_NAME, LABEL, IMEI, MANUFACTURE, MODEL, PRODUCT, WLAN_ADDRESS, SDK_VERSION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
@@ -147,6 +160,12 @@ public class Device {
         return statementDeviceCheck;
     }
 
+    private static synchronized PreparedStatement getStatementAssignUser() throws SQLException {
+        if (statementAssignUser == null) {
+            statementAssignUser = DatabaseHelper.getConnection().prepareStatement("INSERT INTO USER_DEVICE (USER_ID, DEVICE_ID) VALUES (?, ?)");
+        }
+        return statementAssignUser;
+    }
 
     public class DeviceInfo {
         public SystemInfo system;
