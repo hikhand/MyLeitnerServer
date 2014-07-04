@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import ir.khaled.myleitner.Helper.DatabaseHelper;
 import ir.khaled.myleitner.Helper.ErrorHelper;
+import ir.khaled.myleitner.Helper.Util;
 import ir.khaled.myleitner.response.Response;
 
 /**
@@ -14,9 +15,12 @@ import ir.khaled.myleitner.response.Response;
 public class User {
     public static final String PARAM_USERNAME = "username";
     public static final String PARAM_PASSWORD = "password";
+    public static final String PARAM_EMAIL = "email";
     public static final int NO_USER = -1;
+    public static final int PASSWORD_MIN_LENGTH = 6;
     private static PreparedStatement statementLogin;
     private static PreparedStatement statementRegister;
+    private static PreparedStatement statementRegisterCheck;
     /**
      * Statement to get serId from UDK
      */
@@ -26,12 +30,12 @@ public class User {
     public int id;
     public String firstName;
     public String lastName;
-    public String username;
     public String displayName;
     public String email;
     public String picture;
     public Biography biography;
     public Device device;
+    public String password;
 
     public static int getUserId(String udk) throws SQLException {
         PreparedStatement statement = getStatementUserId();
@@ -50,7 +54,7 @@ public class User {
         String username = request.getParamValue(PARAM_USERNAME);
         String password = request.getParamValue(PARAM_PASSWORD);
 
-        Object object = validateUser(username, password);
+        Object object = validateUser(username, password, false);
         if (object instanceof User) {//user successfully logged in
             User loggedInUser = (User) object;
             assignDeviceAndUser(loggedInUser.id, request.getUDK());
@@ -59,6 +63,57 @@ public class User {
             return Response.error(ErrorHelper.USER_DOESNT_EXIST, "no user with the given username or email exists");
         } else {//username and password didn't match
             return Response.error(ErrorHelper.WRONG_USERNAME_PASSWORD, "username or password is wrong");
+        }
+    }
+
+    public static Response<User> register(Request request) throws SQLException {
+        String udk = request.getUDK();
+        String displayName = request.getParamValue(PARAM_USERNAME);
+        String password = request.getParamValue(PARAM_PASSWORD);
+        String email = request.getParamValue(PARAM_EMAIL);
+
+        if (Util.isEmpty(udk))//if param udk is missing from request
+            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_UDK, "missing param 'udk'");
+        if (Util.isEmpty(displayName))//if param displayName is missing from request
+            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_DISPLAY_NAME, "missing param 'displayName'");
+        if (Util.isEmpty(email))//if param email is missing from request
+            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_EMAIL, "missing param 'email'");
+        if (Util.isEmpty(password))//if param password is missing from request
+            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_PASSWORD, "missing param 'password'");
+        if (password.length() < 6)//if password is not strong enough
+            return Response.error(ErrorHelper.REGISTER_WEAK_PASSWORD, "password length is less than " + PASSWORD_MIN_LENGTH);
+
+        //if everything from the request is alright.
+        //if an user with the given email exists
+        if (userAlreadyExist(email))
+            return Response.error(ErrorHelper.REGISTER_EMAIL_ALREADY_EXISTS, "an user with the given email already exists");
+
+        User user = new User();
+        user.email = email;
+        user.displayName = displayName;
+        user.saveUser(udk);
+
+        return validateUser(email, password, true);
+    }
+
+    /**
+     * checks if such a user with the given email already exists.
+     *
+     * @param email user's email address
+     * @return true if an user with the same email exists otherwise false
+     */
+    private static boolean userAlreadyExist(String email) throws SQLException {
+        PreparedStatement statement = getStatementRegisterCheck();
+        statement.setString(1, email);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        if (resultSet.first()) {
+            //an exact user with the given email exists
+            return true;
+        } else {
+            //no such user with the given email exists
+            return false;
         }
     }
 
@@ -96,20 +151,20 @@ public class User {
      * @return if username and password matches {@link User}, if no such user exists {@link ir.khaled.myleitner.Helper.ErrorHelper#USER_DOESNT_EXIST}
      * and if username and password don't match returns {@code false}
      */
-    private static Object validateUser(String username, String password) throws SQLException {
+    private static Object validateUser(String username, String password, boolean passwordHashed) throws SQLException {
         PreparedStatement statement = getStatementLogin();
         statement.setString(1, username);
-        statement.setString(2, username);
 
         ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.first()) {
+            if (!passwordHashed)
+                password = Util.md5(password);
             if (password.equals(resultSet.getString("PASSWORD"))) {//password matches
                 User user = new User();
                 user.id = resultSet.getInt("ID");
                 user.firstName = resultSet.getString("FIRST_NAME");
                 user.lastName = resultSet.getString("LAST_NAME");
-                user.username = resultSet.getString("USERNAME");
                 user.displayName = resultSet.getString("DISPLAY_NAME");
                 user.email = resultSet.getString("EMAIL_ADDRESS");
                 user.picture = resultSet.getString("PICTURE");
@@ -127,7 +182,7 @@ public class User {
 
     private static synchronized PreparedStatement getStatementLogin() throws SQLException {
         if (statementLogin == null) {
-            statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ? OR USERNAME = ?");
+            statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ? AND PASSWORD = ?");
         }
         return statementLogin;
     }
@@ -148,7 +203,25 @@ public class User {
 
     private static synchronized PreparedStatement getStatementRegister() throws SQLException {
         if (statementRegister == null) {
-            statementRegister = DatabaseHelper.getConnection().prepareStatement()
+            statementRegister = DatabaseHelper.getConnection().prepareStatement("INSERT INTO USER (DEVICE_UDK, DISPLAY_NAME, PASSWORD, EMAIL_ADDRESS) VALUES (?, ?, ?, ?)");
         }
+        return statementRegister;
+    }
+
+    private static synchronized PreparedStatement getStatementRegisterCheck() throws SQLException {
+        if (statementRegisterCheck == null) {
+            statementRegisterCheck = DatabaseHelper.getConnection().prepareStatement("SELECT EMAIL_ADDRESS FROM USER WHERE EMAIL_ADDRESS = ?");
+        }
+        return statementRegisterCheck;
+    }
+
+    private void saveUser(String udk) throws SQLException {
+        PreparedStatement statement = getStatementRegister();
+        statement.setString(1, udk);
+        statement.setString(2, displayName);
+        statement.setString(3, Util.md5(password));
+        statement.setString(4, email);
+
+        statement.executeUpdate();
     }
 }

@@ -26,6 +26,7 @@ public class RequestHandler {
     private static final String METHOD_ADD_CARD = "addCard";
     private static final String METHOD_LAST_CARDS = "lastCards";
     private static final String METHOD_LOGIN = "login";
+    private static final String METHOD_REGISTER = "register";
 
     private Request request;
     private OutputStreamWriter streamWriter;
@@ -69,6 +70,8 @@ public class RequestHandler {
             handleLastCards();
         } else if (request.requestName.equals(METHOD_LOGIN)) {
             handleRequestLogin();
+        } else if (request.requestName.equals(METHOD_REGISTER)) {
+            handleRequestRegister();
         } else {
             handleNoSuchMethod();
         }
@@ -155,6 +158,10 @@ public class RequestHandler {
             Response response = Response.error(ErrorHelper.EXCEPTION_LOGIN_USER, "Exception while logging in user: " + e.toString());
             response.sendResponse(streamWriter);
         }
+    }
+
+    private void handleRequestRegister() throws IOException {
+
     }
 
 

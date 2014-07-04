@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31134700-c3a6-4695-941b-34839dab0062" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyLeitnerServer.iml" afterPath="$PROJECT_DIR$/MyLeitnerServer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/khaled.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/khaled.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyLeitnerServer.iws" />
@@ -29,31 +29,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RequestHandler.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RequestHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.042769857" vertical-offset="315" max-vertical-offset="3864">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="4011">
+              <caret line="56" column="98" selection-start-line="56" selection-start-column="98" selection-end-line="56" selection-end-column="98" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1013" max-vertical-offset="2016">
-              <caret line="150" column="80" selection-start-line="150" selection-start-column="80" selection-end-line="150" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="2197" max-vertical-offset="3969">
+              <caret line="153" column="26" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
               <folding>
                 <element signature="docComment;class#User#0" expanded="false" />
                 <element signature="docComment;field#statementUserId#0;class#User#0" expanded="false" />
-                <element signature="method#loginUser#0;class#User#0" expanded="false" />
+                <element signature="method#assignDeviceToUser#0;class#User#0" expanded="false" />
+                <element signature="docComment;method#assignDeviceAndUser#0;class#User#0" expanded="false" />
+                <element signature="method#assignDeviceAndUser#0;class#User#0" expanded="false" />
                 <element signature="docComment;method#validateUser#0;class#User#0" expanded="false" />
-                <element signature="method#validateUser#0;class#User#0" expanded="false" />
                 <element signature="method#getStatementUserId#0;class#User#0" expanded="false" />
-                <marker date="1404495874041" expanded="true" signature="5058:5116" placeholder="SELECT * FRO..USER..." />
-                <marker date="1404495874041" expanded="false" signature="5379:5418" placeholder="SELECT USER_..DEVICE..." />
-                <marker date="1404495874041" expanded="true" signature="5700:5743" placeholder="UPDATE USER ..." />
+                <element signature="method#getStatementAssignDevice#0;class#User#0" expanded="false" />
+                <marker date="1404501101313" expanded="true" signature="7638:7697" placeholder="SELECT * FRO..USER..." />
+                <marker date="1404501101313" expanded="false" signature="7960:7999" placeholder="SELECT USER_..DEVICE..." />
+                <marker date="1404501101313" expanded="false" signature="8281:8324" placeholder="UPDATE USER ..." />
+                <marker date="1404501101313" expanded="true" signature="8600:8688" placeholder="INSERT INTO ..." />
+                <marker date="1404501101313" expanded="true" signature="8975:9029" placeholder="SELECT EMAIL..USER..." />
               </folding>
             </state>
           </provider>
@@ -62,12 +66,11 @@
       <file leaf-file-name="Device.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="3318">
-              <caret line="145" column="31" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3444">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Device#0" expanded="false" />
-                <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
                 <element signature="method#handleRegisterDevice#0;class#Device#0" expanded="false" />
                 <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
                 <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
@@ -81,44 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3806" max-vertical-offset="4830">
-              <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
-              <folding>
-                <marker date="1404488521005" expanded="true" signature="7506:7587" placeholder="INSERT INTO ..." />
-                <marker date="1404488521005" expanded="true" signature="7882:8198" placeholder="SELECT CARD...CARD..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="693">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Response.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
-              <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ErrorHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="483">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -145,11 +115,11 @@
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
       </list>
     </option>
   </component>
@@ -621,7 +591,7 @@
       <workItem from="1404465899555" duration="596000" />
       <workItem from="1404473250495" duration="10000" />
       <workItem from="1404473305759" duration="8157000" />
-      <workItem from="1404488554405" duration="7194000" />
+      <workItem from="1404488554405" duration="11542000" />
     </task>
     <task id="LOCAL-00001" summary="new log system &#10;addCard method&#10;">
       <created>1403467477469</created>
@@ -639,15 +609,19 @@
       <created>1404478430567</created>
       <updated>1404478430567</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="assign device to user and vice versa">
+      <created>1404496802870</created>
+      <updated>1404496802870</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67230000" />
+    <option name="totallyTimeSpent" value="71578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -664,6 +638,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -675,7 +650,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -698,7 +672,8 @@
     <MESSAGE value="som refactoring" />
     <MESSAGE value="login user added" />
     <MESSAGE value="to do assign device to user after login" />
-    <option name="LAST_COMMIT_MESSAGE" value="to do assign device to user after login" />
+    <MESSAGE value="assign device to user and vice versa" />
+    <option name="LAST_COMMIT_MESSAGE" value="assign device to user and vice versa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,10 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -854,20 +829,35 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3554" max-vertical-offset="4830">
           <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
           <folding>
-            <marker date="1404488521005" expanded="true" signature="7506:7587" placeholder="INSERT INTO ..." />
-            <marker date="1404488521005" expanded="true" signature="7882:8198" placeholder="SELECT CARD...CARD..." />
+            <marker date="1404488521005" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1404488521005" expanded="true" signature="-1:-1" placeholder="SELECT CARD...CARD..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="4011">
+          <caret line="56" column="98" selection-start-line="56" selection-start-column="98" selection-end-line="56" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="3318">
-          <caret line="145" column="31" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3444">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Device#0" expanded="false" />
-            <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
             <element signature="method#handleRegisterDevice#0;class#Device#0" expanded="false" />
             <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
             <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
@@ -880,37 +870,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1013" max-vertical-offset="2016">
-          <caret line="150" column="80" selection-start-line="150" selection-start-column="80" selection-end-line="150" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="2197" max-vertical-offset="3969">
+          <caret line="153" column="26" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
           <folding>
             <element signature="docComment;class#User#0" expanded="false" />
             <element signature="docComment;field#statementUserId#0;class#User#0" expanded="false" />
-            <element signature="method#loginUser#0;class#User#0" expanded="false" />
+            <element signature="method#assignDeviceToUser#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#assignDeviceAndUser#0;class#User#0" expanded="false" />
+            <element signature="method#assignDeviceAndUser#0;class#User#0" expanded="false" />
             <element signature="docComment;method#validateUser#0;class#User#0" expanded="false" />
-            <element signature="method#validateUser#0;class#User#0" expanded="false" />
             <element signature="method#getStatementUserId#0;class#User#0" expanded="false" />
-            <marker date="1404495874041" expanded="true" signature="5058:5116" placeholder="SELECT * FRO..USER..." />
-            <marker date="1404495874041" expanded="false" signature="5379:5418" placeholder="SELECT USER_..DEVICE..." />
-            <marker date="1404495874041" expanded="true" signature="5700:5743" placeholder="UPDATE USER ..." />
+            <element signature="method#getStatementAssignDevice#0;class#User#0" expanded="false" />
+            <marker date="1404501101313" expanded="true" signature="7638:7697" placeholder="SELECT * FRO..USER..." />
+            <marker date="1404501101313" expanded="false" signature="7960:7999" placeholder="SELECT USER_..DEVICE..." />
+            <marker date="1404501101313" expanded="false" signature="8281:8324" placeholder="UPDATE USER ..." />
+            <marker date="1404501101313" expanded="true" signature="8600:8688" placeholder="INSERT INTO ..." />
+            <marker date="1404501101313" expanded="true" signature="8975:9029" placeholder="SELECT EMAIL..USER..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042769857" vertical-offset="315" max-vertical-offset="3864">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
