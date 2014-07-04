@@ -32,6 +32,7 @@ public class User {
     }
 
     public static Response<User> loginUser(Request request) throws SQLException {
+        //TODO after login assign this device to user
         String username = request.getParamValue(PARAM_USERNAME);
         String password = request.getParamValue(PARAM_PASSWORD);
 
