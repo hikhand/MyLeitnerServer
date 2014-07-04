@@ -19,6 +19,9 @@ public class Device {
     private static final String PARAM_DEVICE_INFO = "deviceInfo";
     private static PreparedStatement statementDeviceCheck;
     private static PreparedStatement statementRegisterDevice;
+    /**
+     * Statement to get deviceId from UDK
+     */
     private static PreparedStatement statementDeviceId;
     private static PreparedStatement statementAssignUser;
     private static Gson gson = new Gson();
@@ -127,10 +130,17 @@ public class Device {
         return gson.fromJson(jsonDeviceInfo, DeviceInfo.class);
     }
 
-    public static Response<Boolean> assignDeviceToUser(int userId, int deviceId) throws SQLException {
+    /**
+     *
+     * @param userId to assign to device
+     * @param UDK device's UDK
+     * @return always a success response
+     * @throws SQLException on any sql failure
+     */
+    public static Response<Boolean> assignUserToDevice(int userId, String UDK) throws SQLException {
         PreparedStatement statement = getStatementAssignUser();
         statement.setInt(1, userId);
-        statement.setInt(2, deviceId);
+        statement.setString(2, UDK);
 
         //insert user and device into user_device table
         statement.executeUpdate();
@@ -162,7 +172,7 @@ public class Device {
 
     private static synchronized PreparedStatement getStatementAssignUser() throws SQLException {
         if (statementAssignUser == null) {
-            statementAssignUser = DatabaseHelper.getConnection().prepareStatement("INSERT INTO USER_DEVICE (USER_ID, DEVICE_ID) VALUES (?, ?)");
+            statementAssignUser = DatabaseHelper.getConnection().prepareStatement("UPDATE DEVICE SET USER_ID = ? WHERE UDK = ?");
         }
         return statementAssignUser;
     }

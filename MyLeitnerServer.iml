@@ -17,6 +17,8 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="com.google.code.gson:gson:2.2.4" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.31-bin" level="project" />
   </component>
 </module>
 

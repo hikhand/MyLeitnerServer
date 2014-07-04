@@ -16,7 +16,12 @@ public class User {
     public static final String PARAM_PASSWORD = "password";
     public static final int NO_USER = -1;
     private static PreparedStatement statementLogin;
+    private static PreparedStatement statementRegister;
+    /**
+     * Statement to get serId from UDK
+     */
     private static PreparedStatement statementUserId;
+    private static PreparedStatement statementAssignDevice;
 
     public int id;
     public String firstName;
@@ -28,9 +33,17 @@ public class User {
     public Biography biography;
     public Device device;
 
-    public static int getUserId(String udk) {
+    public static int getUserId(String udk) throws SQLException {
+        PreparedStatement statement = getStatementUserId();
+        statement.setInt(1, Device.getDeviceId(udk));
 
-        return NO_USER;
+        ResultSet resultSet = statement.executeQuery();
+
+        if (resultSet.first()) {
+            return resultSet.getInt("USER_ID");//column USER_ID from table user_device
+        } else {
+            return NO_USER;
+        }
     }
 
     public static Response<User> loginUser(Request request) throws SQLException {
@@ -40,7 +53,7 @@ public class User {
         Object object = validateUser(username, password);
         if (object instanceof User) {//user successfully logged in
             User loggedInUser = (User) object;
-            assignDeviceToUser(loggedInUser.id, request.getUDK());
+            assignDeviceAndUser(loggedInUser.id, request.getUDK());
             return Response.success(loggedInUser);
         } else if (object instanceof Integer) {//no user with the given username or email exists
             return Response.error(ErrorHelper.USER_DOESNT_EXIST, "no user with the given username or email exists");
@@ -50,16 +63,34 @@ public class User {
     }
 
     /**
-     * assign the requested device to user using {@link ir.khaled.myleitner.model.Device#assignDeviceToUser(int, int)}
-     * @param udk the device that this request has come from
+     * @param userId user's id find the user
+     * @param udk device's UDK to assign to user
+     * @return always a success response
+     * @throws SQLException on any sql failure
      */
-    private static void assignDeviceToUser(int userId, String udk) throws SQLException {
-        int deviceId = Device.getDeviceId(udk);
-        Device.assignDeviceToUser(userId, deviceId);
+    public static Response<Boolean> assignDeviceToUser(int userId, String udk) throws SQLException {
+        PreparedStatement statement = getStatementAssignDevice();
+        statement.setString(1, udk);
+        statement.setInt(2, userId);
+
+        statement.executeUpdate();
+
+        return Response.success(true);
+    }
+
+    /**
+     * assigns user to device and viscera
+     * @param userId user's id to set to device
+     * @param udk the device that this request has come from to set to user
+     */
+    private static void assignDeviceAndUser(int userId, String udk) throws SQLException {
+        assignDeviceToUser(userId, udk);
+        Device.assignUserToDevice(userId, udk);
     }
 
     /**
      * checks if username and password matches in database
+     *
      * @param username user's email address or user's unique username
      * @param password user's password
      * @return if username and password matches {@link User}, if no such user exists {@link ir.khaled.myleitner.Helper.ErrorHelper#USER_DOESNT_EXIST}
@@ -96,15 +127,28 @@ public class User {
 
     private static synchronized PreparedStatement getStatementLogin() throws SQLException {
         if (statementLogin == null) {
-//            statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE PASSWORD = ? AND (EMAIL_ADDRESS = ? OR USERNAME = ?)");
             statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ? OR USERNAME = ?");
         }
         return statementLogin;
     }
 
-    private static synchronized PreparedStatement getStatementUserId() {
+    private static synchronized PreparedStatement getStatementUserId() throws SQLException {
         if (statementUserId == null) {
-            statementUserId = DatabaseHelper.getConnection().prepareStatement("SELECT ID FROM USER WHERE ")
+            statementUserId = DatabaseHelper.getConnection().prepareStatement("SELECT USER_ID FROM DEVICE WHERE ID = ?");
+        }
+        return statementUserId;
+    }
+
+    private static synchronized PreparedStatement getStatementAssignDevice() throws SQLException {
+        if (statementAssignDevice == null) {
+            statementAssignDevice = DatabaseHelper.getConnection().prepareStatement("UPDATE USER SET DEVICE_UDK = ? WHERE ID = ?");
+        }
+        return statementAssignDevice;
+    }
+
+    private static synchronized PreparedStatement getStatementRegister() throws SQLException {
+        if (statementRegister == null) {
+            statementRegister = DatabaseHelper.getConnection().prepareStatement()
         }
     }
 }
