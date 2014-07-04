@@ -9,6 +9,7 @@ import ir.khaled.myleitner.model.Card;
 import ir.khaled.myleitner.model.Device;
 import ir.khaled.myleitner.model.LastChanges;
 import ir.khaled.myleitner.model.Request;
+import ir.khaled.myleitner.model.User;
 import ir.khaled.myleitner.model.Welcome;
 import ir.khaled.myleitner.response.Response;
 
@@ -24,6 +25,7 @@ public class RequestHandler {
     private static final String METHOD_REGISTER_DEVICE = "registerDevice";
     private static final String METHOD_ADD_CARD = "addCard";
     private static final String METHOD_LAST_CARDS = "lastCards";
+    private static final String METHOD_LOGIN = "login";
 
     private Request request;
     private OutputStreamWriter streamWriter;
@@ -65,6 +67,8 @@ public class RequestHandler {
             handleAddCard();
         } else if (request.requestName.equals(METHOD_LAST_CARDS)) {
             handleLastCards();
+        } else if (request.requestName.equals(METHOD_LOGIN)) {
+            handleRequestLogin();
         } else {
             handleNoSuchMethod();
         }
@@ -142,7 +146,16 @@ public class RequestHandler {
         return false;
     }
 
-
+    private void handleRequestLogin() throws IOException {
+        try {
+            Response<User> response = User.loginUser(request);
+            response.sendResponse(streamWriter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Response response = Response.error(ErrorHelper.EXCEPTION_LOGIN_USER, "Exception while logging in user: " + e.toString());
+            response.sendResponse(streamWriter);
+        }
+    }
 
 
     /*

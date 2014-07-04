@@ -215,14 +215,14 @@ public class Card {
      * @return singleton instance of PreparedStatement to addCard to database
      * @throws SQLException on any sql failure
      */
-    private PreparedStatement getStatementAddCard() throws SQLException {
+    private static synchronized PreparedStatement getStatementAddCard() throws SQLException {
         if (statementAddCard == null) {
             statementAddCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO CARD (DEVICE_UDK, USER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?)");
         }
         return statementAddCard;
     }
 
-    private static PreparedStatement getStatementLastCards() throws SQLException {
+    private static synchronized PreparedStatement getStatementLastCards() throws SQLException {
         if (statementLastCards == null) {
             statementLastCards = DatabaseHelper.getConnection().prepareStatement(
                     "SELECT CARD.ID, CARD.TITLE, CARD.FRONT, CARD.BACK, CARD.CREATE_TIME, CARD.LIKE_COUNT, " +

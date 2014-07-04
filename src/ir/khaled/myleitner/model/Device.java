@@ -113,9 +113,6 @@ public class Device {
         statement.setString(1, udk);
         ResultSet resultSet = statement.executeQuery();
 
-        if (resultSet == null)
-            return false;
-
         boolean isValid = false;
         if (resultSet.first()) {
             isValid = resultSet.getString(COLUMN_UDK) != null;
@@ -129,21 +126,21 @@ public class Device {
         return gson.fromJson(jsonDeviceInfo, DeviceInfo.class);
     }
 
-    private static PreparedStatement getStatementRegisterDevice() throws SQLException {
+    private static synchronized PreparedStatement getStatementRegisterDevice() throws SQLException {
         if (statementRegisterDevice == null) {
             statementRegisterDevice = DatabaseHelper.getConnection().prepareStatement("INSERT INTO DEVICE (UDK, DENSITY_DPI, SIZE_INCHES, HEIGHT, DENSITY, WIDTH, XDPI, YDPI, STORAGE_EXTERNAL, STORAGE_EXTERNAL_FREE, STORAGE_INTERNAL, RAM_SIZE, CPU_ABI, CPU_ABI2, MAX_FREQUENCY, CORES, ANDROID_ID, BLUETOOTH_ADDRESS, BOARD, BRAND, DEVICE_NAME, DISPLAY_NAME, LABEL, IMEI, MANUFACTURE, MODEL, PRODUCT, WLAN_ADDRESS, SDK_VERSION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
         }
         return statementRegisterDevice;
     }
 
-    private static PreparedStatement getStatementDeviceId() throws SQLException {
+    private static synchronized PreparedStatement getStatementDeviceId() throws SQLException {
         if (statementDeviceId == null) {
             statementDeviceId = DatabaseHelper.getConnection().prepareStatement("SELECT ID FROM device WHERE UDK = ?");
         }
         return statementDeviceId;
     }
 
-    private static PreparedStatement getStatementDeviceCheck() throws SQLException {
+    private static synchronized PreparedStatement getStatementDeviceCheck() throws SQLException {
         if (statementDeviceCheck == null) {
             statementDeviceCheck = DatabaseHelper.getConnection().prepareStatement("SELECT UDK FROM DEVICE WHERE UDK=?");
         }

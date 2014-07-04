@@ -5,11 +5,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyLeitnerServer.iml" afterPath="$PROJECT_DIR$/MyLeitnerServer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/khaled.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/khaled.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyLeitnerServer.iws" />
@@ -36,46 +36,83 @@
       <file leaf-file-name="RequestHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="3612">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1139" max-vertical-offset="2436">
+              <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#RequestHandler#0" expanded="false" />
+                <element signature="method#RequestHandler#0;class#RequestHandler#0" expanded="false" />
+                <element signature="docComment;method#handle#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#handleLastChanges#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#handleWelcome#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#handlePing#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#handleRegisterDevice#0;class#RequestHandler#0" expanded="false" />
+                <element signature="docComment;method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#isDeviceAllowed#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#handleNoSuchMethod#0;class#RequestHandler#0" expanded="false" />
+                <element signature="method#handleInvalidRequest#0;class#RequestHandler#0" expanded="false" />
+                <element signature="e#6306#6365#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
-              <caret line="15" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Biography.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Biography.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Card.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69550174" vertical-offset="1026" max-vertical-offset="3486">
-              <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.4653768" vertical-offset="257" max-vertical-offset="1995">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1404478348789" expanded="true" signature="3527:3604" placeholder="SELECT * FRO..USER..." />
+                <marker date="1404478348789" expanded="true" signature="3686:3744" placeholder="SELECT * FRO..USER..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Device.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1953">
+              <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+              <folding>
+                <element signature="docComment;class#Device#0" expanded="false" />
+                <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
+                <element signature="docComment;method#getDeviceId#0;class#Device#0" expanded="false" />
+                <element signature="method#getDeviceId#0;class#Device#0" expanded="false" />
+                <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
+                <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
+                <element signature="method#getDeviceInfo#0;class#Device#0" expanded="false" />
+                <element signature="method#getStatementRegisterDevice#0;class#Device#0" expanded="false" />
+                <element signature="method#getStatementDeviceId#0;class#Device#0" expanded="false" />
+                <element signature="method#getStatementDeviceCheck#0;class#Device#0" expanded="false" />
+                <element signature="class#DeviceInfo#0;class#Device#0" expanded="false" />
+                <element signature="class#SystemInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+                <element signature="class#ProcessorInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+                <element signature="class#MemoryInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+                <element signature="class#DisplayInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+                <marker date="1404476470146" expanded="false" signature="5172:5605" placeholder="INSERT INTO ..." />
+                <marker date="1404476470146" expanded="false" signature="5883:5918" placeholder="SELECT ID FR..device..." />
+                <marker date="1404476470146" expanded="false" signature="6199:6233" placeholder="SELECT UDK F..DEVICE..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="2163">
+              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+              <folding>
                 <element signature="docComment;class#Card#0" expanded="false" />
                 <element signature="docComment;method#addCard#0;class#Card#0" expanded="false" />
                 <element signature="docComment;method#getCardFromJson#0;class#Card#0" expanded="false" />
-                <element signature="method#getCardFromJson#0;class#Card#0" expanded="false" />
                 <element signature="docComment;method#getLastCards#0;class#Card#0" expanded="false" />
-                <element signature="e#3792#3798#0" expanded="true" />
+                <element signature="method#getLastCards#0;class#Card#0" expanded="false" />
+                <element signature="docComment;method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+                <element signature="method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+                <element signature="method#getLastCardsFromDatabase#0;class#Card#0" expanded="false" />
                 <element signature="docComment;method#setDevice#0;class#Card#0" expanded="false" />
                 <element signature="method#setDevice#0;class#Card#0" expanded="false" />
                 <element signature="docComment;method#setUser#0;class#Card#0" expanded="false" />
@@ -89,20 +126,19 @@
                 <element signature="docComment;method#addCardToDatabase#0;class#Card#0" expanded="false" />
                 <element signature="docComment;method#getStatementAddCard#0;class#Card#0" expanded="false" />
                 <element signature="method#getStatementAddCard#0;class#Card#0" expanded="false" />
-                <marker date="1404069541152" expanded="false" signature="7486:7567" placeholder="INSERT INTO ..." />
-                <marker date="1404069541152" expanded="true" signature="7849:8166" placeholder="SELECT CARD...CARD..." />
-                <marker date="1404069541152" expanded="true" signature="7849:8165" placeholder="SELECT CARD...CARD..." />
-                <marker date="1404069541152" expanded="true" signature="7849:8093" placeholder="SELECT CARD...CARD..." />
+                <element signature="method#getStatementLastCards#0;class#Card#0" expanded="false" />
+                <marker date="1404476076042" expanded="false" signature="7506:7587" placeholder="INSERT INTO ..." />
+                <marker date="1404476076042" expanded="false" signature="7882:8198" placeholder="SELECT CARD...CARD..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
+      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -111,13 +147,19 @@
       <file leaf-file-name="Response.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="808" max-vertical-offset="1386">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#Response#0" expanded="false" />
-                <element signature="method#sendResponse#0;class#Response#0" expanded="false" />
-                <element signature="method#getJson#0;class#Response#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
+              <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
+              <caret line="15" column="48" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,16 +180,16 @@
         <option value="$PROJECT_DIR$/src/MyDictionary.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/LogHelper.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketServer.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketConnection.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
       </list>
     </option>
   </component>
@@ -192,6 +234,8 @@
   <component name="ProjectStructureProblems">
     <ignored-problems>
       <problem id="invalid-module-dependency(module:MyLeitnerServer,&lt; null &gt;)" />
+      <problem id="invalid-module-dependency(module:MyLeitnerServer,com.google.code.gson:gson:2.2.4)" />
+      <problem id="invalid-module-dependency(module:MyLeitnerServer,mysql-connector-java-5.1.31-bin)" />
     </ignored-problems>
   </component>
   <component name="ProjectView">
@@ -207,6 +251,12 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -236,28 +286,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyLeitnerServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyLeitnerServer" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myleitner" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Socket" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,12 +353,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,10 +376,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="LayoutCode.rearrangeEntriesJava" value="true" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="last.edited.regexp" value="" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -626,6 +649,14 @@
       <workItem from="1403628700160" duration="3948000" />
       <workItem from="1404054985424" duration="592000" />
       <workItem from="1404060917976" duration="8929000" />
+      <workItem from="1404221927486" duration="7000" />
+      <workItem from="1404223964420" duration="1433000" />
+      <workItem from="1404227475179" duration="599000" />
+      <workItem from="1404293690794" duration="859000" />
+      <workItem from="1404387756869" duration="1167000" />
+      <workItem from="1404465899555" duration="596000" />
+      <workItem from="1404473250495" duration="10000" />
+      <workItem from="1404473305759" duration="5040000" />
     </task>
     <task id="LOCAL-00001" summary="new log system &#10;addCard method&#10;">
       <created>1403467477469</created>
@@ -639,39 +670,39 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47208000" />
+    <option name="totallyTimeSpent" value="56919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13272922" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13272922" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39980638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13326226" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43366337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43267328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -695,32 +726,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java</url>
-          <line>127</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java</url>
-          <line>126</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -744,336 +749,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33706722" vertical-offset="446" max-vertical-offset="1428">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/SQLException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329939" vertical-offset="240" max-vertical-offset="7308">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1496945" vertical-offset="0" max-vertical-offset="982">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.106924646" vertical-offset="0" max-vertical-offset="982">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5727365" vertical-offset="4" max-vertical-offset="987">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60110295" vertical-offset="114" max-vertical-offset="2079">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59572303" vertical-offset="1326" max-vertical-offset="2835">
-          <caret line="103" column="23" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/LastChanges.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27800408" vertical-offset="0" max-vertical-offset="982">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Welcome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40631366" vertical-offset="0" max-vertical-offset="982">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/com/mysql/jdbc/ResultSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34216103" vertical-offset="4717" max-vertical-offset="12663">
-          <caret line="241" column="15" selection-start-line="241" selection-start-column="15" selection-end-line="241" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/ResultSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329939" vertical-offset="11454" max-vertical-offset="89691">
-          <caret line="587" column="8" selection-start-line="587" selection-start-column="8" selection-end-line="587" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28379774" vertical-offset="1426" max-vertical-offset="4221">
-          <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
-          <folding>
-            <marker date="1404068663644" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1404068663644" expanded="true" signature="-1:-1" placeholder="SELECT ID FR..device..." />
-            <marker date="1404068663644" expanded="true" signature="-1:-1" placeholder="SELECT UDK F..DEVICE..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.416497" vertical-offset="2520" max-vertical-offset="8211">
-          <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#DEFAULT_INITIAL_CAPACITY#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#MAXIMUM_CAPACITY#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#DEFAULT_LOAD_FACTOR#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#TREEIFY_THRESHOLD#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#UNTREEIFY_THRESHOLD#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#MIN_TREEIFY_CAPACITY#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="method#Node#0;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="method#getKey#0;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="method#getValue#0;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="method#toString#0;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="method#setValue#0;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="method#equals#0;class#Node#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#hash#0;class#HashMap#0" expanded="false" />
-            <element signature="method#hash#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#comparableClassFor#0;class#HashMap#0" expanded="false" />
-            <element signature="method#comparableClassFor#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#compareComparables#0;class#HashMap#0" expanded="false" />
-            <element signature="method#compareComparables#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#tableSizeFor#0;class#HashMap#0" expanded="false" />
-            <element signature="method#tableSizeFor#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#table#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#entrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#size#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#modCount#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#threshold#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;field#loadFactor#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#HashMap#0;class#HashMap#0" expanded="false" />
-            <element signature="method#HashMap#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#HashMap#1;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#HashMap#2;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#HashMap#3;class#HashMap#0" expanded="false" />
-            <element signature="method#HashMap#3;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#putMapEntries#0;class#HashMap#0" expanded="false" />
-            <element signature="method#putMapEntries#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#size#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#isEmpty#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#get#0;class#HashMap#0" expanded="false" />
-            <element signature="method#get#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#getNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#getNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#containsKey#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#put#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#putVal#0;class#HashMap#0" expanded="false" />
-            <element signature="method#putVal#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#resize#0;class#HashMap#0" expanded="false" />
-            <element signature="method#resize#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#treeifyBin#0;class#HashMap#0" expanded="false" />
-            <element signature="method#treeifyBin#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#putAll#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#remove#0;class#HashMap#0" expanded="false" />
-            <element signature="method#remove#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#removeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#removeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#clear#0;class#HashMap#0" expanded="false" />
-            <element signature="method#clear#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#containsValue#0;class#HashMap#0" expanded="false" />
-            <element signature="method#containsValue#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#keySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#keySet#0;class#HashMap#0" expanded="false" />
-            <element signature="class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#size#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#clear#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#iterator#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#contains#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#remove#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#spliterator#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEach#0;class#KeySet#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#values#0;class#HashMap#0" expanded="false" />
-            <element signature="class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#size#0;class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#clear#0;class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#iterator#0;class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#contains#0;class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#spliterator#0;class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEach#0;class#Values#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#entrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#entrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#size#0;class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#clear#0;class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#contains#0;class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#remove#0;class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#spliterator#0;class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEach#0;class#EntrySet#0;class#HashMap#0" expanded="false" />
-            <element signature="method#getOrDefault#0;class#HashMap#0" expanded="false" />
-            <element signature="method#remove#1;class#HashMap#0" expanded="false" />
-            <element signature="method#replace#0;class#HashMap#0" expanded="false" />
-            <element signature="method#replace#1;class#HashMap#0" expanded="false" />
-            <element signature="method#computeIfAbsent#0;class#HashMap#0" expanded="false" />
-            <element signature="method#computeIfPresent#0;class#HashMap#0" expanded="false" />
-            <element signature="method#compute#0;class#HashMap#0" expanded="false" />
-            <element signature="method#merge#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEach#0;class#HashMap#0" expanded="false" />
-            <element signature="method#replaceAll#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#clone#0;class#HashMap#0" expanded="false" />
-            <element signature="e#50632#50662#0" expanded="false" />
-            <element signature="e#50632#50662#0" expanded="false" />
-            <element signature="method#clone#0;class#HashMap#0" expanded="false" />
-            <element signature="method#loadFactor#0;class#HashMap#0" expanded="false" />
-            <element signature="method#capacity#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#writeObject#0;class#HashMap#0" expanded="false" />
-            <element signature="method#writeObject#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#readObject#0;class#HashMap#0" expanded="false" />
-            <element signature="method#readObject#0;class#HashMap#0" expanded="false" />
-            <element signature="e#53051#53077#0" expanded="false" />
-            <element signature="class#HashIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#HashIterator#0;class#HashIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#nextNode#0;class#HashIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#remove#0;class#HashIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#KeyIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#next#0;class#KeyIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#ValueIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#next#0;class#ValueIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#EntryIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#next#0;class#EntryIterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#HashMapSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#HashMapSpliterator#0;class#HashMapSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#getFence#0;class#HashMapSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#estimateSize#0;class#HashMapSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#KeySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#trySplit#0;class#KeySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEachRemaining#0;class#KeySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#tryAdvance#0;class#KeySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#characteristics#0;class#KeySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#ValueSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#trySplit#0;class#ValueSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEachRemaining#0;class#ValueSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#tryAdvance#0;class#ValueSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#characteristics#0;class#ValueSpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="class#EntrySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#trySplit#0;class#EntrySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#forEachRemaining#0;class#EntrySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#tryAdvance#0;class#EntrySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#characteristics#0;class#EntrySpliterator#0;class#HashMap#0" expanded="false" />
-            <element signature="method#newNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#replacementNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#newTreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#replacementTreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#reinitialize#0;class#HashMap#0" expanded="false" />
-            <element signature="method#reinitialize#0;class#HashMap#0" expanded="false" />
-            <element signature="method#internalWriteEntries#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#root#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#root#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#moveRootToFront#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#moveRootToFront#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#find#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#find#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#getTreeNode#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#getTreeNode#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#tieBreakOrder#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#tieBreakOrder#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#treeify#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#treeify#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#untreeify#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#untreeify#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#putTreeVal#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#putTreeVal#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#removeTreeNode#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#removeTreeNode#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#split#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#split#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#rotateLeft#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#rotateRight#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#balanceInsertion#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#balanceDeletion#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="docComment;method#checkInvariants#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-            <element signature="method#checkInvariants#0;class#TreeNode#0;class#HashMap#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/util/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329939" vertical-offset="9396" max-vertical-offset="16170">
-          <caret line="522" column="18" selection-start-line="522" selection-start-column="18" selection-end-line="522" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42769858" vertical-offset="0" max-vertical-offset="982">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-          <folding>
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="808" max-vertical-offset="1386">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Response#0" expanded="false" />
-            <element signature="method#sendResponse#0;class#Response#0" expanded="false" />
-            <element signature="method#getJson#0;class#Response#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="3612">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
-          <caret line="15" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Biography.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
@@ -1082,18 +757,376 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69550174" vertical-offset="1026" max-vertical-offset="3486">
-          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.63682604" vertical-offset="2104" max-vertical-offset="3087">
+          <caret line="130" column="43" selection-start-line="130" selection-start-column="43" selection-end-line="130" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14954221" vertical-offset="0" max-vertical-offset="983">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/reflect/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23499492" vertical-offset="0" max-vertical-offset="983">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/reflect/AnnotatedElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33265513" vertical-offset="3957" max-vertical-offset="8883">
+          <caret line="237" column="17" selection-start-line="237" selection-start-column="17" selection-end-line="237" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.215667" vertical-offset="10252" max-vertical-offset="11235">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13733469" vertical-offset="579" max-vertical-offset="11424">
+          <caret line="260" column="5" selection-start-line="260" selection-start-column="5" selection-end-line="260" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Class#0" expanded="false" />
+            <element signature="initializer##0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#Class#0" expanded="false" />
+            <element signature="method#toString#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#toGenericString#0;class#Class#0" expanded="false" />
+            <element signature="method#toGenericString#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#forName#0;class#Class#0" expanded="false" />
+            <element signature="method#forName#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#forName#1;class#Class#0" expanded="false" />
+            <element signature="method#forName#1;class#Class#0" expanded="false" />
+            <element signature="docComment;method#forName0#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#newInstance#0;class#Class#0" expanded="false" />
+            <element signature="method#newInstance#0;class#Class#0" expanded="false" />
+            <element signature="e#14968#15029#0" expanded="false" />
+            <element signature="e#15503#15553#0" expanded="false" />
+            <element signature="class#15819:16059" expanded="false" />
+            <element signature="method#run#0;class#15819:16059" expanded="false" />
+            <element signature="docComment;method#isInstance#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isAssignableFrom#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isInterface#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isArray#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isPrimitive#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isAnnotation#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isSynthetic#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#Class#0" expanded="false" />
+            <element signature="method#getName#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getClassLoader#0;class#Class#0" expanded="false" />
+            <element signature="method#getClassLoader#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getTypeParameters#0;class#Class#0" expanded="false" />
+            <element signature="method#getTypeParameters#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getSuperclass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getGenericSuperclass#0;class#Class#0" expanded="false" />
+            <element signature="method#getGenericSuperclass#0;class#Class#0" expanded="false" />
+            <element signature="e#30670#30697#0" expanded="false" />
+            <element signature="docComment;method#getPackage#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getInterfaces#0;class#Class#0" expanded="false" />
+            <element signature="method#getInterfaces#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getGenericInterfaces#0;class#Class#0" expanded="false" />
+            <element signature="method#getGenericInterfaces#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getComponentType#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getModifiers#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getSigners#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#setSigners#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getEnclosingMethod#0;class#Class#0" expanded="false" />
+            <element signature="method#getEnclosingMethod#0;class#Class#0" expanded="false" />
+            <element signature="e#41571#41623#0" expanded="false" />
+            <element signature="method#getEnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#EnclosingMethodInfo#0;class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="e#44105#44153#0" expanded="false" />
+            <element signature="e#44333#44385#0" expanded="false" />
+            <element signature="e#44505#44557#0" expanded="false" />
+            <element signature="method#isConstructor#0;class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#isMethod#0;class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#getEnclosingClass#0;class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#getName#0;class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#getDescriptor#0;class#EnclosingMethodInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#toClass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getEnclosingConstructor#0;class#Class#0" expanded="false" />
+            <element signature="method#getEnclosingConstructor#0;class#Class#0" expanded="false" />
+            <element signature="e#47994#48046#0" expanded="false" />
+            <element signature="docComment;method#getDeclaringClass#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaringClass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getEnclosingClass#0;class#Class#0" expanded="false" />
+            <element signature="method#getEnclosingClass#0;class#Class#0" expanded="false" />
+            <element signature="e#51538#51589#0" expanded="false" />
+            <element signature="docComment;method#getSimpleName#0;class#Class#0" expanded="false" />
+            <element signature="method#getSimpleName#0;class#Class#0" expanded="false" />
+            <element signature="e#53714#53775#0" expanded="false" />
+            <element signature="docComment;method#getTypeName#0;class#Class#0" expanded="false" />
+            <element signature="method#getTypeName#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isAsciiDigit#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getCanonicalName#0;class#Class#0" expanded="false" />
+            <element signature="method#getCanonicalName#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isAnonymousClass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isLocalClass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isMemberClass#0;class#Class#0" expanded="false" />
+            <element signature="method#isMemberClass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getSimpleBinaryName#0;class#Class#0" expanded="false" />
+            <element signature="method#getSimpleBinaryName#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isLocalOrAnonymousClass#0;class#Class#0" expanded="false" />
+            <element signature="method#isLocalOrAnonymousClass#0;class#Class#0" expanded="false" />
+            <element signature="e#58876#58931#0" expanded="false" />
+            <element signature="docComment;method#getClasses#0;class#Class#0" expanded="false" />
+            <element signature="method#getClasses#0;class#Class#0" expanded="false" />
+            <element signature="e#60407#60473#0" expanded="false" />
+            <element signature="class#60845:61619" expanded="false" />
+            <element signature="method#run#0;class#60845:61619" expanded="false" />
+            <element signature="docComment;method#getFields#0;class#Class#0" expanded="false" />
+            <element signature="method#getFields#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getMethods#0;class#Class#0" expanded="false" />
+            <element signature="method#getMethods#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getConstructors#0;class#Class#0" expanded="false" />
+            <element signature="method#getConstructors#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getField#0;class#Class#0" expanded="false" />
+            <element signature="method#getField#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getMethod#0;class#Class#0" expanded="false" />
+            <element signature="method#getMethod#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getConstructor#0;class#Class#0" expanded="false" />
+            <element signature="method#getConstructor#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredClasses#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredClasses#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredFields#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredFields#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredMethods#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredMethods#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredConstructors#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredConstructors#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredField#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredField#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredMethod#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredMethod#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredConstructor#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredConstructor#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getResourceAsStream#0;class#Class#0" expanded="false" />
+            <element signature="method#getResourceAsStream#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getResource#0;class#Class#0" expanded="false" />
+            <element signature="method#getResource#0;class#Class#0" expanded="false" />
+            <element signature="docComment;field#allPermDomain#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getProtectionDomain#0;class#Class#0" expanded="false" />
+            <element signature="method#getProtectionDomain#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getProtectionDomain0#0;class#Class#0" expanded="false" />
+            <element signature="method#checkMemberAccess#0;class#Class#0" expanded="false" />
+            <element signature="method#checkPackageAccess#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#resolveName#0;class#Class#0" expanded="false" />
+            <element signature="method#resolveName#0;class#Class#0" expanded="false" />
+            <element signature="docComment;class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="initializer##0;class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="method#objectFieldOffset#0;class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="method#casReflectionData#0;class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="method#casAnnotationType#0;class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="method#casAnnotationData#0;class#Atomic#0;class#Class#0" expanded="false" />
+            <element signature="docComment;field#useCaches#0;class#Class#0" expanded="false" />
+            <element signature="class#ReflectionData#0;class#Class#0" expanded="false" />
+            <element signature="method#reflectionData#0;class#Class#0" expanded="false" />
+            <element signature="e#104377#104450#0" expanded="false" />
+            <element signature="method#newReflectionData#0;class#Class#0" expanded="false" />
+            <element signature="method#getFactory#0;class#Class#0" expanded="false" />
+            <element signature="method#getGenericInfo#0;class#Class#0" expanded="false" />
+            <element signature="method#getExecutableTypeAnnotationBytes#0;class#Class#0" expanded="false" />
+            <element signature="e#106742#106744#0" expanded="false" />
+            <element signature="method#privateGetDeclaredFields#0;class#Class#0" expanded="false" />
+            <element signature="method#privateGetPublicFields#0;class#Class#0" expanded="false" />
+            <element signature="e#108131#108187#0" expanded="false" />
+            <element signature="method#addAll#0;class#Class#0" expanded="false" />
+            <element signature="e#109365#109367#0" expanded="false" />
+            <element signature="method#privateGetDeclaredConstructors#0;class#Class#0" expanded="false" />
+            <element signature="e#110534#110536#0" expanded="false" />
+            <element signature="method#privateGetDeclaredMethods#0;class#Class#0" expanded="false" />
+            <element signature="class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#MethodArray#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#add#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#addAll#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#addAll#1;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#addIfNotPresent#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#addAllIfNotPresent#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#addAllNonStatic#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#removeByNameAndSignature#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#compactAndTrim#0;class#MethodArray#0;class#Class#0" expanded="false" />
+            <element signature="method#privateGetPublicMethods#0;class#Class#0" expanded="false" />
+            <element signature="e#114662#114718#0" expanded="false" />
+            <element signature="e#114942#114998#0" expanded="false" />
+            <element signature="e#115651#115696#0" expanded="false" />
+            <element signature="e#116045#116092#0" expanded="false" />
+            <element signature="e#116746#116748#0" expanded="false" />
+            <element signature="method#searchFields#0;class#Class#0" expanded="false" />
+            <element signature="method#getField0#0;class#Class#0" expanded="false" />
+            <element signature="e#117240#117301#0" expanded="false" />
+            <element signature="method#searchMethods#0;class#Class#0" expanded="false" />
+            <element signature="method#getMethod0#0;class#Class#0" expanded="false" />
+            <element signature="e#119249#119310#0" expanded="false" />
+            <element signature="method#getConstructor0#0;class#Class#0" expanded="false" />
+            <element signature="e#121258#121260#0" expanded="false" />
+            <element signature="method#arrayContentsEq#0;class#Class#0" expanded="false" />
+            <element signature="method#copyFields#0;class#Class#0" expanded="false" />
+            <element signature="method#copyMethods#0;class#Class#0" expanded="false" />
+            <element signature="method#copyConstructors#0;class#Class#0" expanded="false" />
+            <element signature="method#argumentTypesToString#0;class#Class#0" expanded="false" />
+            <element signature="docComment;field#serialVersionUID#0;class#Class#0" expanded="false" />
+            <element signature="docComment;field#serialPersistentFields#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#desiredAssertionStatus#0;class#Class#0" expanded="false" />
+            <element signature="method#desiredAssertionStatus#0;class#Class#0" expanded="false" />
+            <element signature="e#126038#126099#0" expanded="false" />
+            <element signature="docComment;method#isEnum#0;class#Class#0" expanded="false" />
+            <element signature="method#isEnum#0;class#Class#0" expanded="false" />
+            <element signature="e#126820#126880#0" expanded="false" />
+            <element signature="method#getReflectionFactory#0;class#Class#0" expanded="false" />
+            <element signature="method#checkInitted#0;class#Class#0" expanded="false" />
+            <element signature="class#127762:128992" expanded="false" />
+            <element signature="method#run#0;class#127762:128992" expanded="false" />
+            <element signature="e#127845#127900#0" expanded="false" />
+            <element signature="docComment;method#getEnumConstants#0;class#Class#0" expanded="false" />
+            <element signature="method#getEnumConstants#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getEnumConstantsShared#0;class#Class#0" expanded="false" />
+            <element signature="method#getEnumConstantsShared#0;class#Class#0" expanded="false" />
+            <element signature="class#130057:130302" expanded="false" />
+            <element signature="method#run#0;class#130057:130302" expanded="false" />
+            <element signature="e#130497#130553#0" expanded="false" />
+            <element signature="docComment;method#enumConstantDirectory#0;class#Class#0" expanded="false" />
+            <element signature="method#enumConstantDirectory#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#cast#0;class#Class#0" expanded="false" />
+            <element signature="method#cast#0;class#Class#0" expanded="false" />
+            <element signature="method#cannotCastMsg#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#asSubclass#0;class#Class#0" expanded="false" />
+            <element signature="method#asSubclass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getAnnotation#0;class#Class#0" expanded="false" />
+            <element signature="method#getAnnotation#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#isAnnotationPresent#0;class#Class#0" expanded="false" />
+            <element signature="method#isAnnotationPresent#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getAnnotationsByType#0;class#Class#0" expanded="false" />
+            <element signature="method#getAnnotationsByType#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getAnnotations#0;class#Class#0" expanded="false" />
+            <element signature="method#getAnnotations#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredAnnotation#0;class#Class#0" expanded="false" />
+            <element signature="e#135352#135361#0" expanded="false" />
+            <element signature="method#getDeclaredAnnotation#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredAnnotationsByType#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredAnnotationsByType#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getDeclaredAnnotations#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredAnnotations#0;class#Class#0" expanded="false" />
+            <element signature="class#AnnotationData#0;class#Class#0" expanded="false" />
+            <element signature="method#AnnotationData#0;class#AnnotationData#0;class#Class#0" expanded="false" />
+            <element signature="method#annotationData#0;class#Class#0" expanded="false" />
+            <element signature="method#createAnnotationData#0;class#Class#0" expanded="false" />
+            <element signature="method#casAnnotationType#0;class#Class#0" expanded="false" />
+            <element signature="method#getDeclaredAnnotationMap#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getAnnotatedSuperclass#0;class#Class#0" expanded="false" />
+            <element signature="method#getAnnotatedSuperclass#0;class#Class#0" expanded="false" />
+            <element signature="docComment;method#getAnnotatedInterfaces#0;class#Class#0" expanded="false" />
+            <element signature="method#getAnnotatedInterfaces#0;class#Class#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57230145" vertical-offset="236" max-vertical-offset="1344">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3329939" vertical-offset="723" max-vertical-offset="27300">
+          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/rt.jar!/com/sun/rowset/CachedRowSetImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3226" max-vertical-offset="15078">
+          <caret line="170" column="28" selection-start-line="170" selection-start-column="28" selection-end-line="170" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/com/mysql/jdbc/ResultSetImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34216103" vertical-offset="7237" max-vertical-offset="12663">
+          <caret line="361" column="28" selection-start-line="361" selection-start-column="28" selection-end-line="361" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3329939" vertical-offset="10131" max-vertical-offset="89691">
+          <caret line="524" column="11" selection-start-line="524" selection-start-column="11" selection-end-line="524" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1953">
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+          <folding>
+            <element signature="docComment;class#Device#0" expanded="false" />
+            <element signature="method#isDeviceValid#0;class#Device#0" expanded="false" />
+            <element signature="docComment;method#getDeviceId#0;class#Device#0" expanded="false" />
+            <element signature="method#getDeviceId#0;class#Device#0" expanded="false" />
+            <element signature="docComment;method#isDeviceValid#1;class#Device#0" expanded="false" />
+            <element signature="method#isDeviceValid#1;class#Device#0" expanded="false" />
+            <element signature="method#getDeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="method#getStatementRegisterDevice#0;class#Device#0" expanded="false" />
+            <element signature="method#getStatementDeviceId#0;class#Device#0" expanded="false" />
+            <element signature="method#getStatementDeviceCheck#0;class#Device#0" expanded="false" />
+            <element signature="class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#SystemInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#ProcessorInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#MemoryInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <element signature="class#DisplayInfo#0;class#DeviceInfo#0;class#Device#0" expanded="false" />
+            <marker date="1404476470146" expanded="false" signature="5172:5605" placeholder="INSERT INTO ..." />
+            <marker date="1404476470146" expanded="false" signature="5883:5918" placeholder="SELECT ID FR..device..." />
+            <marker date="1404476470146" expanded="false" signature="6199:6233" placeholder="SELECT UDK F..DEVICE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1181" max-vertical-offset="2163">
+          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+          <folding>
             <element signature="docComment;class#Card#0" expanded="false" />
             <element signature="docComment;method#addCard#0;class#Card#0" expanded="false" />
             <element signature="docComment;method#getCardFromJson#0;class#Card#0" expanded="false" />
-            <element signature="method#getCardFromJson#0;class#Card#0" expanded="false" />
             <element signature="docComment;method#getLastCards#0;class#Card#0" expanded="false" />
-            <element signature="e#3792#3798#0" expanded="true" />
+            <element signature="method#getLastCards#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+            <element signature="method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+            <element signature="method#getLastCardsFromDatabase#0;class#Card#0" expanded="false" />
             <element signature="docComment;method#setDevice#0;class#Card#0" expanded="false" />
             <element signature="method#setDevice#0;class#Card#0" expanded="false" />
             <element signature="docComment;method#setUser#0;class#Card#0" expanded="false" />
@@ -1107,10 +1140,77 @@
             <element signature="docComment;method#addCardToDatabase#0;class#Card#0" expanded="false" />
             <element signature="docComment;method#getStatementAddCard#0;class#Card#0" expanded="false" />
             <element signature="method#getStatementAddCard#0;class#Card#0" expanded="false" />
-            <marker date="1404069541152" expanded="false" signature="7486:7567" placeholder="INSERT INTO ..." />
-            <marker date="1404069541152" expanded="true" signature="7849:8166" placeholder="SELECT CARD...CARD..." />
-            <marker date="1404069541152" expanded="true" signature="7849:8165" placeholder="SELECT CARD...CARD..." />
-            <marker date="1404069541152" expanded="true" signature="7849:8093" placeholder="SELECT CARD...CARD..." />
+            <element signature="method#getStatementLastCards#0;class#Card#0" expanded="false" />
+            <marker date="1404476076042" expanded="false" signature="7506:7587" placeholder="INSERT INTO ..." />
+            <marker date="1404476076042" expanded="false" signature="7882:8198" placeholder="SELECT CARD...CARD..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="2079">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12273" max-vertical-offset="21777">
+          <caret line="633" column="16" selection-start-line="633" selection-start-column="16" selection-end-line="633" selection-end-column="16" />
+          <folding>
+            <element signature="e#26470#26471#0" expanded="true" />
+            <element signature="e#26528#26529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1139" max-vertical-offset="2436">
+          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#RequestHandler#0" expanded="false" />
+            <element signature="method#RequestHandler#0;class#RequestHandler#0" expanded="false" />
+            <element signature="docComment;method#handle#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleLastChanges#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleWelcome#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handlePing#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleRegisterDevice#0;class#RequestHandler#0" expanded="false" />
+            <element signature="docComment;method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#isDeviceAllowed#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleNoSuchMethod#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleInvalidRequest#0;class#RequestHandler#0" expanded="false" />
+            <element signature="e#6306#6365#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4653768" vertical-offset="257" max-vertical-offset="1995">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1404478348789" expanded="true" signature="3527:3604" placeholder="SELECT * FRO..USER..." />
+            <marker date="1404478348789" expanded="true" signature="3686:3744" placeholder="SELECT * FRO..USER..." />
           </folding>
         </state>
       </provider>
