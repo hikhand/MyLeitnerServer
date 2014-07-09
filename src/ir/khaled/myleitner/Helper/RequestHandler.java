@@ -17,8 +17,6 @@ import ir.khaled.myleitner.response.Response;
  * Created by khaled.bakhtiari on 5/1/2014.
  */
 public class RequestHandler {
-    private static final String METHOD_SIGN_UP = "signUp";
-    private static final String METHOD_SIGN_IN = "signIn";
     private static final String METHOD_LAST_CHANGES = "lastChanges";
     private static final String METHOD_WELCOME = "welcome";
     private static final String METHOD_PING = "ping";
@@ -39,6 +37,7 @@ public class RequestHandler {
 
     /**
      * resolves a method from the request.
+     *
      * @param isConnectionVerified if true connection won't verify
      * @return whether the request is verified or not.
      * @throws IOException on any failure
@@ -54,6 +53,7 @@ public class RequestHandler {
             return false;
         }
 
+        //if the request is
         if (!request.requestName.equals(METHOD_REGISTER_DEVICE) && !isConnectionVerified && !isDeviceAllowed())
             return false;
 
@@ -131,22 +131,27 @@ public class RequestHandler {
         }
     }
 
-    private boolean isDeviceAllowed() throws IOException{
-        boolean allowed;
+    /**
+     * checks whether the device is valid or not if so returns true otherwise sends <b>response back to client</b> and returns false
+     *
+     * @return true if device is valid false otherwise
+     * @throws IOException on any failure in socket connection
+     */
+    private boolean isDeviceAllowed() throws IOException {
         try {
-            allowed = Device.isDeviceValid(request);
-            if (allowed)
+            if (Device.isDeviceValid(request)) {
                 return true;
+            } else {
+                Response response = Response.error(ErrorHelper.UNKNOWN_DEVICE, "the device is unknown!");
+                response.sendResponse(streamWriter);
+                return false;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             Response response = Response.error(ErrorHelper.SQL_DEVICE, "error performing SQL operation for deviceCheck. error: " + e.toString());
             response.sendResponse(streamWriter);
             return false;
         }
-
-        Response response = Response.error(ErrorHelper.UNKNOWN_DEVICE, "the device is unknown!");
-        response.sendResponse(streamWriter);
-        return false;
     }
 
     private void handleRequestLogin() throws IOException {
@@ -161,7 +166,14 @@ public class RequestHandler {
     }
 
     private void handleRequestRegister() throws IOException {
-
+        try {
+            Response<User> response = User.register(request);
+            response.sendResponse(streamWriter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Response response = Response.error(ErrorHelper.EXCEPTION_REGISTER_USER, "Exception while registering user: " + e.toString());
+            response.sendResponse(streamWriter);
+        }
     }
 
 

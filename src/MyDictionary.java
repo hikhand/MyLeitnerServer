@@ -1,6 +1,6 @@
 import ir.khaled.myleitner.Helper.DatabaseHelper;
 import ir.khaled.myleitner.Helper.LogHelper;
-import ir.khaled.myleitner.Socket.SocketServer;
+import ir.khaled.myleitner.socket.SocketServer;
 
 /**
  * Created by kh.bakhtiari on 4/29/2014.

@@ -1,4 +1,4 @@
-package ir.khaled.myleitner.Socket;
+package ir.khaled.myleitner.socket;
 
 import com.google.gson.Gson;
 
@@ -126,9 +126,19 @@ public class SocketConnection extends Thread {
             return;
         }
 
-        Request request = gson.fromJson(jsonRequest, Request.class);
+        Request request = getRequest(jsonRequest);
+        if (request == null)
+            return;
 
         isConnectionVerified = new RequestHandler(request, streamWriter).handle(isConnectionVerified);
+    }
+
+    private Request getRequest(String jsonRequest) {
+        try {
+            return gson.fromJson(jsonRequest, Request.class);
+        } catch (Exception ignored) {
+        }
+        return null;
     }
 
     public static interface ISocketConnectionListener {

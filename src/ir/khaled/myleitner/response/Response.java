@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.lang.reflect.Type;
 
 import ir.khaled.myleitner.Helper.LogHelper;
-import ir.khaled.myleitner.Socket.SocketConnection;
+import ir.khaled.myleitner.socket.SocketConnection;
 
 /**
  * Created by khaled.bakhtiari on 4/29/2014.

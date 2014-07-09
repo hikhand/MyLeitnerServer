@@ -1,4 +1,4 @@
-package ir.khaled.myleitner.Socket;
+package ir.khaled.myleitner.socket;
 
 import java.net.ServerSocket;
 import java.util.ArrayList;

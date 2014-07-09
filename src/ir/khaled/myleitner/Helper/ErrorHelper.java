@@ -20,4 +20,5 @@ public class ErrorHelper {
     public static final int REGISTER_MISSING_PARAM_PASSWORD = 13;
     public static final int REGISTER_WEAK_PASSWORD = 14;
     public static final int REGISTER_EMAIL_ALREADY_EXISTS = 15;
+    public static final int EXCEPTION_REGISTER_USER = 16;
 }

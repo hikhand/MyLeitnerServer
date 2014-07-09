@@ -5,7 +5,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import ir.khaled.myleitner.Socket.SocketConnection;
+import ir.khaled.myleitner.socket.SocketConnection;
 
 /**
  * Created by khaled.bakhtiari on 4/29/2014.

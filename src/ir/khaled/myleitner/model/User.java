@@ -91,9 +91,19 @@ public class User {
         User user = new User();
         user.email = email;
         user.displayName = displayName;
+        user.password = password;
         user.saveUser(udk);
 
-        return validateUser(email, password, true);
+        Object object = validateUser(email, password, false);
+        if (object instanceof User) {//user successfully logged in
+            User loggedInUser = (User) object;
+            assignDeviceAndUser(loggedInUser.id, request.getUDK());
+            return Response.success(loggedInUser);
+        } else if (object instanceof Integer) {//no user with the given username or email exists
+            return Response.error(ErrorHelper.USER_DOESNT_EXIST, "no user with the given username or email exists");
+        } else {//username and password didn't match
+            return Response.error(ErrorHelper.WRONG_USERNAME_PASSWORD, "username or password is wrong");
+        }
     }
 
     /**
@@ -119,7 +129,7 @@ public class User {
 
     /**
      * @param userId user's id find the user
-     * @param udk device's UDK to assign to user
+     * @param udk    device's UDK to assign to user
      * @return always a success response
      * @throws SQLException on any sql failure
      */
@@ -135,8 +145,9 @@ public class User {
 
     /**
      * assigns user to device and viscera
+     *
      * @param userId user's id to set to device
-     * @param udk the device that this request has come from to set to user
+     * @param udk    the device that this request has come from to set to user
      */
     private static void assignDeviceAndUser(int userId, String udk) throws SQLException {
         assignDeviceToUser(userId, udk);
@@ -215,6 +226,12 @@ public class User {
         return statementRegisterCheck;
     }
 
+    /**
+     * saves user into database <b>password must not be hashed</b>
+     *
+     * @param udk user's device to be set in database
+     * @throws SQLException on any sql failure
+     */
     private void saveUser(String udk) throws SQLException {
         PreparedStatement statement = getStatementRegister();
         statement.setString(1, udk);
