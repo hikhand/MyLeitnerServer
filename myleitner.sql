@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : MyLeitner
-Source Server Version : 50619
-Source Host           : localhost:3306
+Source Server         : local
+Source Server Version : 50617
+Source Host           : 127.0.0.1:3306
 Source Database       : myleitner
 
 Target Server Type    : MYSQL
-Target Server Version : 50619
+Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2014-07-10 12:48:51
+Date: 2014-07-10 19:45:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,7 +42,7 @@ CREATE TABLE `card` (
   KEY `FK_USER_CARD` (`USER_ID`),
   CONSTRAINT `FK_DEVICE_CARD` FOREIGN KEY (`DEVICE_UDK`) REFERENCES `device` (`UDK`),
   CONSTRAINT `FK_USER_CARD` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`ID`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for card_tag
@@ -116,10 +116,11 @@ CREATE TABLE `device` (
   `WLAN_ADDRESS` varchar(50) DEFAULT NULL,
   `SDK_VERSION` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`),
+  UNIQUE KEY `UNIQUE_UDK` (`UDK`),
   KEY `UDK` (`UDK`),
   KEY `FK_DEVICE_USER` (`USER_ID`),
   CONSTRAINT `FK_DEVICE_USER` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for example
