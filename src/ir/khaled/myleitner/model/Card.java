@@ -77,7 +77,8 @@ public class Card {
      * @return list of latest cards
      */
     public static Response<ArrayList<Card>> getLastCards(Request request) throws SQLException {
-        int limit = getLimitFromRequest(request);
+        // get limit from request or if doesn't exist use default value
+        int limit = Util.stringToInt(request.getParamValue(PARAM_LIMIT), DEFAULT_LIST_LIMIT);
 
         ArrayList<Card> lastCards = getLastCardsFromDatabase(limit);
         if (lastCards == null) {
@@ -85,22 +86,6 @@ public class Card {
         } else {
             return Response.success(lastCards);
         }
-    }
-
-    /**
-     * @param request the request from client the get limit value from
-     * @return the limit value from request by the key of {@link #PARAM_LIMIT} if doesn't exist in request the default {@link #DEFAULT_LIST_LIMIT} will be returned
-     */
-    private static int getLimitFromRequest(Request request) {
-        String limit = request.getParamValue(PARAM_LIMIT);
-
-        int intLimit;
-        try {
-            intLimit = Integer.parseInt(limit);
-        } catch (Exception ignored) {
-            intLimit = DEFAULT_LIST_LIMIT;
-        }
-        return intLimit;
     }
 
     private static ArrayList<Card> getLastCardsFromDatabase(int limit) throws SQLException {

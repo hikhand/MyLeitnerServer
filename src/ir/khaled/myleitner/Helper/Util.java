@@ -43,6 +43,14 @@ public class Util {
         return System.currentTimeMillis() - startTime;
     }
 
+    public static int stringToInt(String s, int defaultValue) {
+        try {
+            return Integer.parseInt(s);
+        } catch (Exception ignored) {
+            return defaultValue;
+        }
+    }
+
     public static class EmailValidator {
 
         private static final String EMAIL_PATTERN =
