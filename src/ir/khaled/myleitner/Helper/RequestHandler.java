@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import ir.khaled.myleitner.log.WebserviceLog;
 import ir.khaled.myleitner.model.Card;
 import ir.khaled.myleitner.model.Device;
 import ir.khaled.myleitner.model.LastChanges;
@@ -17,14 +18,14 @@ import ir.khaled.myleitner.response.Response;
  * Created by khaled.bakhtiari on 5/1/2014.
  */
 public class RequestHandler {
-    private static final String METHOD_LAST_CHANGES = "lastChanges";
-    private static final String METHOD_WELCOME = "welcome";
-    private static final String METHOD_PING = "ping";
-    private static final String METHOD_REGISTER_DEVICE = "registerDevice";
-    private static final String METHOD_ADD_CARD = "addCard";
-    private static final String METHOD_LAST_CARDS = "lastCards";
-    private static final String METHOD_LOGIN = "login";
-    private static final String METHOD_REGISTER = "register";
+    private static final String LAST_CHANGES = "lastChanges";
+    private static final String WELCOME = "welcome";
+    private static final String PING = "ping";
+    private static final String REGISTER_DEVICE = "registerDevice";
+    private static final String ADD_CARD = "addCard";
+    private static final String LAST_CARDS = "lastCards";
+    private static final String LOGIN = "login";
+    private static final String REGISTER = "register";
 
     private Request request;
     private OutputStreamWriter streamWriter;
@@ -48,34 +49,65 @@ public class RequestHandler {
             return false;
         }
 
-        if (request.requestName.equals(METHOD_PING)) {
+        if (request.requestName.equals(PING)) {
             handlePing();
             return false;
         }
 
         //if the request is
-        if (!request.requestName.equals(METHOD_REGISTER_DEVICE) && !isConnectionVerified && !isDeviceAllowed())
+        if (!request.requestName.equals(REGISTER_DEVICE) && !isConnectionVerified && !isDeviceAllowed())
             return false;
 
+        long startTime = System.currentTimeMillis();
+        String target = null;
 
-        if (request.requestName.equals(METHOD_LAST_CHANGES)) {
-            handleLastChanges();
-        } else if (request.requestName.equals(METHOD_WELCOME)) {
-            handleWelcome();
-        } else if (request.requestName.equals(METHOD_REGISTER_DEVICE)) {
-            handleRegisterDevice();
-        } else if (request.requestName.equals(METHOD_ADD_CARD)) {
-            handleAddCard();
-        } else if (request.requestName.equals(METHOD_LAST_CARDS)) {
-            handleLastCards();
-        } else if (request.requestName.equals(METHOD_LOGIN)) {
-            handleRequestLogin();
-        } else if (request.requestName.equals(METHOD_REGISTER)) {
-            handleRequestRegister();
-        } else {
-            handleNoSuchMethod();
+        switch (request.requestName) {
+            case LAST_CHANGES:
+                handleLastChanges();
+                break;
+
+            case REGISTER_DEVICE:
+                handleRegisterDevice();
+                break;
+
+            case WELCOME:
+                handleWelcome();
+                break;
+
+            case ADD_CARD:
+                handleAddCard();
+                break;
+
+            case LAST_CARDS:
+                handleLastCards();
+                break;
+
+            case LOGIN:
+                handleRequestLogin();
+                target = request.getParamValue(User.PARAM_USERNAME);
+                break;
+
+            case REGISTER:
+                handleRequestRegister();
+                target = request.getParamValue(User.PARAM_EMAIL);
+                break;
+
+            default:
+                handleNoSuchMethod();
+                return true;
         }
+
+        logRequest(target, Util.timeDistanceInt(startTime));
+
         return true;
+    }
+
+    private void logRequest(String target, int takenTime) throws IOException {
+        try {
+            WebserviceLog.saveLog(request.getUDK(), request.requestName, target, takenTime);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private void handleLastChanges() throws IOException {

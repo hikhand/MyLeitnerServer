@@ -6,14 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31134700-c3a6-4695-941b-34839dab0062" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/LogHelper.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/LogHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyDictionary.java" afterPath="$PROJECT_DIR$/src/MyDictionary.java" />
+    <list default="true" id="31134700-c3a6-4695-941b-34839dab0062" name="Default" comment="assign device to user and vice versa">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/log/WebserviceLog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" />
-      <change type="MODIFICATION" beforePath="D:\My Leitner\MyLeitnerServer\src\ir\khaled\myleitner\socket\SocketServer.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" afterPath="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyLeitnerServer.iws" />
@@ -37,40 +37,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RequestHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RequestHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2856">
-              <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+            <state vertical-scroll-proportion="1.1853932" vertical-offset="1155" max-vertical-offset="3667">
+              <caret line="106" column="27" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
               <folding>
                 <element signature="docComment;class#RequestHandler#0" expanded="false" />
                 <element signature="method#RequestHandler#0;class#RequestHandler#0" expanded="false" />
                 <element signature="docComment;method#handle#0;class#RequestHandler#0" expanded="false" />
                 <element signature="method#handleLastChanges#0;class#RequestHandler#0" expanded="false" />
-                <element signature="method#handleWelcome#0;class#RequestHandler#0" expanded="false" />
-                <element signature="method#handleRegisterDevice#0;class#RequestHandler#0" expanded="false" />
-                <element signature="method#handleAddCard#0;class#RequestHandler#0" expanded="false" />
                 <element signature="docComment;method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
-                <element signature="method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
+                <element signature="docComment;method#isDeviceAllowed#0;class#RequestHandler#0" expanded="false" />
                 <element signature="method#handleNoSuchMethod#0;class#RequestHandler#0" expanded="false" />
                 <element signature="method#handleInvalidRequest#0;class#RequestHandler#0" expanded="false" />
-                <element signature="e#7123#7182#0" expanded="false" />
+                <element signature="e#7657#7716#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0412757" vertical-offset="1647" max-vertical-offset="5082">
-              <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1575">
+              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding>
-                <marker date="1404926605876" expanded="true" signature="8310:8369" placeholder="SELECT * FRO..USER..." />
-                <marker date="1404926605876" expanded="true" signature="8632:8671" placeholder="SELECT USER_..DEVICE..." />
-                <marker date="1404926605876" expanded="true" signature="8953:8996" placeholder="UPDATE USER ..." />
-                <marker date="1404926605876" expanded="true" signature="9272:9360" placeholder="INSERT INTO ..." />
-                <marker date="1404926605876" expanded="true" signature="9647:9701" placeholder="SELECT EMAIL..USER..." />
+                <element signature="docComment;class#User#0" expanded="false" />
+                <element signature="docComment;field#statementUserId#0;class#User#0" expanded="false" />
+                <element signature="method#loginUser#0;class#User#0" expanded="false" />
+                <element signature="method#register#0;class#User#0" expanded="false" />
+                <element signature="e#3834#3878#0" expanded="false" />
+                <element signature="docComment;method#userAlreadyExist#0;class#User#0" expanded="false" />
+                <element signature="method#userAlreadyExist#0;class#User#0" expanded="false" />
+                <element signature="docComment;method#assignDeviceToUser#0;class#User#0" expanded="false" />
+                <element signature="method#assignDeviceToUser#0;class#User#0" expanded="false" />
+                <element signature="docComment;method#assignDeviceAndUser#0;class#User#0" expanded="false" />
+                <element signature="method#assignDeviceAndUser#0;class#User#0" expanded="false" />
+                <element signature="docComment;method#validateUser#0;class#User#0" expanded="false" />
+                <element signature="method#validateUser#0;class#User#0" expanded="false" />
+                <element signature="method#getStatementLogin#0;class#User#0" expanded="false" />
+                <element signature="method#getStatementUserId#0;class#User#0" expanded="false" />
+                <element signature="method#getStatementAssignDevice#0;class#User#0" expanded="false" />
+                <element signature="method#getStatementRegister#0;class#User#0" expanded="false" />
+                <element signature="method#getStatementRegisterCheck#0;class#User#0" expanded="false" />
+                <element signature="docComment;method#saveUser#0;class#User#0" expanded="false" />
+                <element signature="method#saveUser#0;class#User#0" expanded="false" />
+                <marker date="1410281072583" expanded="false" signature="8338:8397" placeholder="SELECT * FRO..USER..." />
+                <marker date="1410281072583" expanded="false" signature="8660:8699" placeholder="SELECT USER_..DEVICE..." />
+                <marker date="1410281072583" expanded="false" signature="8981:9024" placeholder="UPDATE USER ..." />
+                <marker date="1410281072583" expanded="false" signature="9300:9388" placeholder="INSERT INTO ..." />
+                <marker date="1410281072583" expanded="false" signature="9675:9729" placeholder="SELECT EMAIL..USER..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebserviceLog.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/log/WebserviceLog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#WebserviceLog#0" expanded="false" />
+                <element signature="e#315#335#0" expanded="false" />
+                <element signature="docComment;method#saveLog#0;class#WebserviceLog#0" expanded="false" />
+                <element signature="method#saveLog#0;class#WebserviceLog#0" expanded="false" />
+                <element signature="method#getStatementLogin#0;class#WebserviceLog#0" expanded="false" />
+                <marker date="1410283373856" expanded="false" signature="1535:1616" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -79,24 +113,14 @@
       <file leaf-file-name="Device.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="4767">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="4767">
+              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <marker date="1404493589521" expanded="true" signature="5849:6282" placeholder="INSERT INTO ..." />
                 <marker date="1404493589521" expanded="true" signature="6560:6595" placeholder="SELECT ID FR..device..." />
                 <marker date="1404493589521" expanded="true" signature="6876:6910" placeholder="SELECT UDK F..DEVICE..." />
                 <marker date="1404493589521" expanded="true" signature="7191:7234" placeholder="UPDATE DEVIC..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErrorHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="51" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -121,13 +145,16 @@
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Socket/SocketConnection.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketConnection.java" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java" />
-        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketServer.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketConnection.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java" />
+        <option value="db-console:/48d4ffb/00b98549-c2be-454d-bc8a-fd2509633fc7/" />
         <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/ir/khaled/myleitner/log/WebserviceLog.java" />
       </list>
     </option>
   </component>
@@ -135,8 +162,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1024" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -167,7 +194,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectStructureProblems">
     <ignored-problems>
@@ -189,7 +216,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -237,7 +263,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
+              <option name="myItemId" value="myleitner" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -259,7 +285,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="socket" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,11 +304,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="myleitner" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLeitnerServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLeitnerServer" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myleitner" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Helper" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,14 +348,14 @@
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="SQL Dialects" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -593,6 +646,14 @@
       <workItem from="1404912985109" duration="2373000" />
       <workItem from="1404915924820" duration="138000" />
       <workItem from="1404919918063" duration="2425000" />
+      <workItem from="1405014062809" duration="214000" />
+      <workItem from="1405265261467" duration="178000" />
+      <workItem from="1405265516355" duration="582000" />
+      <workItem from="1410016399841" duration="348000" />
+      <workItem from="1410016938912" duration="186000" />
+      <workItem from="1410019020961" duration="2244000" />
+      <workItem from="1410277242437" duration="1142000" />
+      <workItem from="1410278391293" duration="6039000" />
     </task>
     <task id="LOCAL-00001" summary="new log system &#10;addCard method&#10;">
       <created>1403467477469</created>
@@ -618,37 +679,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80341000" />
+    <option name="totallyTimeSpent" value="91274000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1024" height="768" extended-state="7" />
     <editor active="false" />
     <layout>
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838774" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13272922" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32673267" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25408164" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39980638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3982808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24466951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43168318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42979944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="100" width="1720" height="880" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -681,7 +742,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="28" />
+      <option name="time" value="32" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -701,128 +762,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.215667" vertical-offset="10252" max-vertical-offset="11235">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13733469" vertical-offset="579" max-vertical-offset="11424">
-          <caret line="260" column="5" selection-start-line="260" selection-start-column="5" selection-end-line="260" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57230145" vertical-offset="236" max-vertical-offset="1344">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/PreparedStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329939" vertical-offset="723" max-vertical-offset="27300">
-          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/rt.jar!/com/sun/rowset/CachedRowSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="3226" max-vertical-offset="15078">
-          <caret line="170" column="28" selection-start-line="170" selection-start-column="28" selection-end-line="170" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/com/mysql/jdbc/ResultSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34216103" vertical-offset="7237" max-vertical-offset="12663">
-          <caret line="361" column="28" selection-start-line="361" selection-start-column="28" selection-end-line="361" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/ResultSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329939" vertical-offset="10131" max-vertical-offset="89691">
-          <caret line="524" column="11" selection-start-line="524" selection-start-column="11" selection-end-line="524" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="2079">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1680">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3554" max-vertical-offset="4830">
-          <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1428">
-          <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9786368" vertical-offset="1684" max-vertical-offset="3045">
-          <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2563581" vertical-offset="0" max-vertical-offset="983">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1248" max-vertical-offset="64323">
-          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="4767">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding>
-            <marker date="1404493589521" expanded="true" signature="5849:6282" placeholder="INSERT INTO ..." />
-            <marker date="1404493589521" expanded="true" signature="6560:6595" placeholder="SELECT ID FR..device..." />
-            <marker date="1404493589521" expanded="true" signature="6876:6910" placeholder="SELECT UDK F..DEVICE..." />
-            <marker date="1404493589521" expanded="true" signature="7191:7234" placeholder="UPDATE DEVIC..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/ErrorHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
@@ -835,73 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.1831129" vertical-offset="0" max-vertical-offset="3633">
           <caret line="894" column="16" selection-start-line="894" selection-start-column="16" selection-end-line="894" selection-end-column="16" />
-          <folding>
-            <element signature="docComment;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#serialVersionUID#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#backtrace#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#detailMessage#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;class#SentinelHolder#0;class#Throwable#0" expanded="false" />
-            <element signature="class#SentinelHolder#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#STACK_TRACE_ELEMENT_SENTINEL#0;class#SentinelHolder#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#STACK_TRACE_SENTINEL#0;class#SentinelHolder#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#UNASSIGNED_STACK#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#cause#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#stackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#suppressedExceptions#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#NULL_CAUSE_MESSAGE#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#SELF_SUPPRESSION_MESSAGE#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#CAUSE_CAPTION#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;field#SUPPRESSED_CAPTION#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#Throwable#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#Throwable#1;class#Throwable#0" expanded="false" />
-            <element signature="method#Throwable#1;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#Throwable#2;class#Throwable#0" expanded="false" />
-            <element signature="method#Throwable#2;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#Throwable#3;class#Throwable#0" expanded="false" />
-            <element signature="method#Throwable#3;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#Throwable#4;class#Throwable#0" expanded="false" />
-            <element signature="method#Throwable#4;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getMessage#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getLocalizedMessage#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getCause#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#initCause#0;class#Throwable#0" expanded="false" />
-            <element signature="method#initCause#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#toString#0;class#Throwable#0" expanded="false" />
-            <element signature="method#toString#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#printStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#printStackTrace#1;class#Throwable#0" expanded="false" />
-            <element signature="method#printStackTrace#2;class#Throwable#0" expanded="false" />
-            <element signature="e#26597#26656#0" expanded="false" />
-            <element signature="docComment;method#printEnclosedStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="method#printEnclosedStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#printStackTrace#3;class#Throwable#0" expanded="false" />
-            <element signature="docComment;class#PrintStreamOrWriter#0;class#Throwable#0" expanded="false" />
-            <element signature="class#PrintStreamOrWriter#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#lock#0;class#PrintStreamOrWriter#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#println#0;class#PrintStreamOrWriter#0;class#Throwable#0" expanded="false" />
-            <element signature="class#WrappedPrintStream#0;class#Throwable#0" expanded="false" />
-            <element signature="class#WrappedPrintWriter#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#fillInStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="method#fillInStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="method#getOurStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="e#33173#33226#0" expanded="false" />
-            <element signature="docComment;method#setStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="method#setStackTrace#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getStackTraceDepth#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getStackTraceElement#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#readObject#0;class#Throwable#0" expanded="false" />
-            <element signature="method#readObject#0;class#Throwable#0" expanded="false" />
-            <element signature="e#37517#37567#0" expanded="false" />
-            <element signature="e#39193#39249#0" expanded="false" />
-            <element signature="docComment;method#writeObject#0;class#Throwable#0" expanded="false" />
-            <element signature="method#writeObject#0;class#Throwable#0" expanded="false" />
-            <element signature="e#39864#39919#0" expanded="false" />
-            <element signature="docComment;method#addSuppressed#0;class#Throwable#0" expanded="false" />
-            <element signature="method#addSuppressed#0;class#Throwable#0" expanded="false" />
-            <element signature="docComment;method#getSuppressed#0;class#Throwable#0" expanded="false" />
-            <element signature="method#getSuppressed#0;class#Throwable#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,56 +781,231 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08138352" vertical-offset="67" max-vertical-offset="1050">
           <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6796875" vertical-offset="315" max-vertical-offset="1491">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyDictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28125" vertical-offset="0" max-vertical-offset="896">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/response/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56764704" vertical-offset="1000" max-vertical-offset="1680">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3030303" vertical-offset="1617" max-vertical-offset="4704">
+          <caret line="61" column="29" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="29" />
           <folding>
-            <element signature="docComment;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#StackTraceElement#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="method#StackTraceElement#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#getFileName#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#getLineNumber#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#getClassName#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#getMethodName#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#isNativeMethod#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#toString#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="method#toString#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#equals#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="method#equals#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="docComment;method#hashCode#0;class#StackTraceElement#0" expanded="false" />
-            <element signature="method#hashCode#0;class#StackTraceElement#0" expanded="false" />
+            <element signature="e#2036#2037#0" expanded="false" />
+            <element signature="e#2063#2064#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Welcome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2856">
-          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/socket/SocketConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2176" max-vertical-offset="3045">
+          <caret line="132" column="73" selection-start-line="132" selection-start-column="73" selection-end-line="132" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31343284" vertical-offset="0" max-vertical-offset="670">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#RequestHandler#0" expanded="false" />
-            <element signature="method#RequestHandler#0;class#RequestHandler#0" expanded="false" />
-            <element signature="docComment;method#handle#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleLastChanges#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleWelcome#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleRegisterDevice#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleAddCard#0;class#RequestHandler#0" expanded="false" />
-            <element signature="docComment;method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleNoSuchMethod#0;class#RequestHandler#0" expanded="false" />
-            <element signature="method#handleInvalidRequest#0;class#RequestHandler#0" expanded="false" />
-            <element signature="e#7123#7182#0" expanded="false" />
+            <element signature="docComment;class#Util#0" expanded="false" />
+            <element signature="method#isEmpty#0;class#Util#0" expanded="false" />
+            <element signature="method#md5#0;class#Util#0" expanded="false" />
+            <element signature="class#EmailValidator#0;class#Util#0" expanded="false" />
+            <element signature="docComment;method#validate#0;class#EmailValidator#0;class#Util#0" expanded="false" />
+            <element signature="method#validate#0;class#EmailValidator#0;class#Util#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/48d4ffb/00b98549-c2be-454d-bc8a-fd2509633fc7/">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1724138" vertical-offset="0" max-vertical-offset="189">
+          <caret line="3" column="94" selection-start-line="3" selection-start-column="94" selection-end-line="3" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/com/mysql/jdbc/PreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34216103" vertical-offset="4276" max-vertical-offset="9156">
+          <caret line="220" column="16" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/com/mysql/jdbc/ServerPreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34216103" vertical-offset="2386" max-vertical-offset="4704">
+          <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.31-bin.jar!/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34216103" vertical-offset="979" max-vertical-offset="2016">
+          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/sql/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3329939" vertical-offset="4062" max-vertical-offset="27300">
+          <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="4767">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <marker date="1404493589521" expanded="true" signature="5849:6282" placeholder="INSERT INTO ..." />
+            <marker date="1404493589521" expanded="true" signature="6560:6595" placeholder="SELECT ID FR..device..." />
+            <marker date="1404493589521" expanded="true" signature="6876:6910" placeholder="SELECT UDK F..DEVICE..." />
+            <marker date="1404493589521" expanded="true" signature="7191:7234" placeholder="UPDATE DEVIC..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44399184" vertical-offset="1328" max-vertical-offset="2310">
+          <caret line="198" column="7" selection-start-line="198" selection-start-column="7" selection-end-line="198" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;class#Card#0" expanded="false" />
+            <element signature="docComment;method#addCard#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getCardFromJson#0;class#Card#0" expanded="false" />
+            <element signature="method#getCardFromJson#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getLastCards#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+            <element signature="method#getLimitFromRequest#0;class#Card#0" expanded="false" />
+            <element signature="method#getLastCardsFromDatabase#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setDevice#0;class#Card#0" expanded="false" />
+            <element signature="method#setDevice#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setUser#0;class#Card#0" expanded="false" />
+            <element signature="method#setUser#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setTitle#0;class#Card#0" expanded="false" />
+            <element signature="method#setTitle#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setFront#0;class#Card#0" expanded="false" />
+            <element signature="method#setFront#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#setBack#0;class#Card#0" expanded="false" />
+            <element signature="method#setBack#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#addCardToDatabase#0;class#Card#0" expanded="false" />
+            <element signature="docComment;method#getStatementAddCard#0;class#Card#0" expanded="false" />
+            <element signature="method#getStatementAddCard#0;class#Card#0" expanded="false" />
+            <element signature="method#getStatementLastCards#0;class#Card#0" expanded="false" />
+            <marker date="1404488521005" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1404488521005" expanded="true" signature="-1:-1" placeholder="SELECT CARD...CARD..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/log/WebserviceLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#WebserviceLog#0" expanded="false" />
+            <element signature="e#315#335#0" expanded="false" />
+            <element signature="docComment;method#saveLog#0;class#WebserviceLog#0" expanded="false" />
+            <element signature="method#saveLog#0;class#WebserviceLog#0" expanded="false" />
+            <element signature="method#getStatementLogin#0;class#WebserviceLog#0" expanded="false" />
+            <marker date="1410283373856" expanded="false" signature="1535:1616" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0412757" vertical-offset="1647" max-vertical-offset="5082">
-          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1575">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <marker date="1404926605876" expanded="true" signature="8310:8369" placeholder="SELECT * FRO..USER..." />
-            <marker date="1404926605876" expanded="true" signature="8632:8671" placeholder="SELECT USER_..DEVICE..." />
-            <marker date="1404926605876" expanded="true" signature="8953:8996" placeholder="UPDATE USER ..." />
-            <marker date="1404926605876" expanded="true" signature="9272:9360" placeholder="INSERT INTO ..." />
-            <marker date="1404926605876" expanded="true" signature="9647:9701" placeholder="SELECT EMAIL..USER..." />
+            <element signature="docComment;class#User#0" expanded="false" />
+            <element signature="docComment;field#statementUserId#0;class#User#0" expanded="false" />
+            <element signature="method#loginUser#0;class#User#0" expanded="false" />
+            <element signature="method#register#0;class#User#0" expanded="false" />
+            <element signature="e#3834#3878#0" expanded="false" />
+            <element signature="docComment;method#userAlreadyExist#0;class#User#0" expanded="false" />
+            <element signature="method#userAlreadyExist#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#assignDeviceToUser#0;class#User#0" expanded="false" />
+            <element signature="method#assignDeviceToUser#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#assignDeviceAndUser#0;class#User#0" expanded="false" />
+            <element signature="method#assignDeviceAndUser#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#validateUser#0;class#User#0" expanded="false" />
+            <element signature="method#validateUser#0;class#User#0" expanded="false" />
+            <element signature="method#getStatementLogin#0;class#User#0" expanded="false" />
+            <element signature="method#getStatementUserId#0;class#User#0" expanded="false" />
+            <element signature="method#getStatementAssignDevice#0;class#User#0" expanded="false" />
+            <element signature="method#getStatementRegister#0;class#User#0" expanded="false" />
+            <element signature="method#getStatementRegisterCheck#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#saveUser#0;class#User#0" expanded="false" />
+            <element signature="method#saveUser#0;class#User#0" expanded="false" />
+            <marker date="1410281072583" expanded="false" signature="8338:8397" placeholder="SELECT * FRO..USER..." />
+            <marker date="1410281072583" expanded="false" signature="8660:8699" placeholder="SELECT USER_..DEVICE..." />
+            <marker date="1410281072583" expanded="false" signature="8981:9024" placeholder="UPDATE USER ..." />
+            <marker date="1410281072583" expanded="false" signature="9300:9388" placeholder="INSERT INTO ..." />
+            <marker date="1410281072583" expanded="false" signature="9675:9729" placeholder="SELECT EMAIL..USER..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/khaled/myleitner/Helper/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1853932" vertical-offset="1155" max-vertical-offset="3667">
+          <caret line="106" column="27" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
+          <folding>
+            <element signature="docComment;class#RequestHandler#0" expanded="false" />
+            <element signature="method#RequestHandler#0;class#RequestHandler#0" expanded="false" />
+            <element signature="docComment;method#handle#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleLastChanges#0;class#RequestHandler#0" expanded="false" />
+            <element signature="docComment;method#handleLastCards#0;class#RequestHandler#0" expanded="false" />
+            <element signature="docComment;method#isDeviceAllowed#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleNoSuchMethod#0;class#RequestHandler#0" expanded="false" />
+            <element signature="method#handleInvalidRequest#0;class#RequestHandler#0" expanded="false" />
+            <element signature="e#7657#7716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1033,6 +1080,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

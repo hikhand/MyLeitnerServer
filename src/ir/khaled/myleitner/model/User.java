@@ -16,7 +16,7 @@ public class User {
     public static final String PARAM_USERNAME = "username";
     public static final String PARAM_PASSWORD = "password";
     public static final String PARAM_EMAIL = "email";
-    public static final int NO_USER = -1;
+    public static final int NO_USER = 0;
     public static final int PASSWORD_MIN_LENGTH = 6;
     private static PreparedStatement statementLogin;
     private static PreparedStatement statementRegister;
@@ -44,7 +44,7 @@ public class User {
         ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.first()) {
-            return resultSet.getInt("USER_ID");//column USER_ID from table user_device
+            return resultSet.getInt("USER_ID");//column USER_ID from table user_device. if 0 returned means NO_USER
         } else {
             return NO_USER;
         }

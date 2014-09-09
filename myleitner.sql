@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
-Source Server Version : 50617
-Source Host           : 127.0.0.1:3306
+Source Server         : MyLeitner
+Source Server Version : 50619
+Source Host           : localhost:3306
 Source Database       : myleitner
 
 Target Server Type    : MYSQL
-Target Server Version : 50617
+Target Server Version : 50619
 File Encoding         : 65001
 
-Date: 2014-07-10 19:45:28
+Date: 2014-09-09 22:12:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,7 +42,7 @@ CREATE TABLE `card` (
   KEY `FK_USER_CARD` (`USER_ID`),
   CONSTRAINT `FK_DEVICE_CARD` FOREIGN KEY (`DEVICE_UDK`) REFERENCES `device` (`UDK`),
   CONSTRAINT `FK_USER_CARD` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`ID`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for card_tag
@@ -120,7 +120,7 @@ CREATE TABLE `device` (
   KEY `UDK` (`UDK`),
   KEY `FK_DEVICE_USER` (`USER_ID`),
   CONSTRAINT `FK_DEVICE_USER` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for example
@@ -173,6 +173,20 @@ CREATE TABLE `leitner_tag` (
   CONSTRAINT `FK_LEITNER_TAG_LEITNER` FOREIGN KEY (`ID`) REFERENCES `leitner` (`ID`),
   CONSTRAINT `FK_LEITNER_TAG_TAG` FOREIGN KEY (`TAG_ID`) REFERENCES `tag` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for log
+-- ----------------------------
+DROP TABLE IF EXISTS `log`;
+CREATE TABLE `log` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_ID` int(11) DEFAULT NULL,
+  `UDK` varchar(255) DEFAULT NULL,
+  `ACTION` varchar(255) DEFAULT NULL,
+  `TARGET` text,
+  `TAKEN_TIME` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for tag
