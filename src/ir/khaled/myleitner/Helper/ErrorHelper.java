@@ -14,11 +14,13 @@ public class ErrorHelper {
     public static final int USER_DOESNT_EXIST = 7;
     public static final int WRONG_USERNAME_PASSWORD = 8;
     public static final int EXCEPTION_LOGIN_USER = 9;
-    public static final int REGISTER_MISSING_PARAM_UDK = 10;
-    public static final int REGISTER_MISSING_PARAM_DISPLAY_NAME = 11;
-    public static final int REGISTER_MISSING_PARAM_EMAIL = 12;
-    public static final int REGISTER_MISSING_PARAM_PASSWORD = 13;
-    public static final int REGISTER_WEAK_PASSWORD = 14;
-    public static final int REGISTER_EMAIL_ALREADY_EXISTS = 15;
-    public static final int EXCEPTION_REGISTER_USER = 16;
+    public static final int LOGIN_MISSING_PARAM_USERNAME = 10;
+    public static final int LOGIN_MISSING_PARAM_PASSWORD = 11;
+    public static final int REGISTER_MISSING_PARAM_UDK = 12;
+    public static final int REGISTER_MISSING_PARAM_DISPLAY_NAME = 13;
+    public static final int REGISTER_MISSING_PARAM_EMAIL = 14;
+    public static final int REGISTER_MISSING_PARAM_PASSWORD = 15;
+    public static final int REGISTER_WEAK_PASSWORD = 16;
+    public static final int REGISTER_EMAIL_ALREADY_EXISTS = 17;
+    public static final int EXCEPTION_REGISTER_USER = 18;
 }

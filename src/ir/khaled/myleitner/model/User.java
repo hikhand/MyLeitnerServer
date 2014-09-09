@@ -14,6 +14,7 @@ import ir.khaled.myleitner.response.Response;
  */
 public class User {
     public static final String PARAM_USERNAME = "username";
+    public static final String PARAM_DISPLAY_NAME = "displayName";
     public static final String PARAM_PASSWORD = "password";
     public static final String PARAM_EMAIL = "email";
     public static final int NO_USER = 0;
@@ -54,6 +55,11 @@ public class User {
         String username = request.getParamValue(PARAM_USERNAME);
         String password = request.getParamValue(PARAM_PASSWORD);
 
+        if (Util.isEmpty(username))
+            return Response.error(ErrorHelper.LOGIN_MISSING_PARAM_USERNAME, "missing param 'username' (as for now is email)");
+        if (Util.isEmpty(password))
+            return Response.error(ErrorHelper.LOGIN_MISSING_PARAM_PASSWORD, "missing param 'password'");
+
         Object object = validateUser(username, password, false);
         if (object instanceof User) {//user successfully logged in
             User loggedInUser = (User) object;
@@ -68,7 +74,7 @@ public class User {
 
     public static Response<User> register(Request request) throws SQLException {
         String udk = request.getUDK();
-        String displayName = request.getParamValue(PARAM_USERNAME);
+        String displayName = request.getParamValue(PARAM_DISPLAY_NAME);
         String password = request.getParamValue(PARAM_PASSWORD);
         String email = request.getParamValue(PARAM_EMAIL);
 
@@ -193,7 +199,7 @@ public class User {
 
     private static synchronized PreparedStatement getStatementLogin() throws SQLException {
         if (statementLogin == null) {
-            statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ? AND PASSWORD = ?");
+            statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ?");
         }
         return statementLogin;
     }
