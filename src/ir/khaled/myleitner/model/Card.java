@@ -129,6 +129,28 @@ public class Card {
     }
 
     /**
+     * @return singleton instance of PreparedStatement to addCard to database
+     * @throws SQLException on any sql failure
+     */
+    private static synchronized PreparedStatement getStatementAddCard() throws SQLException {
+        if (statementAddCard == null) {
+            statementAddCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO CARD (DEVICE_UDK, USER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?)");
+        }
+        return statementAddCard;
+    }
+
+    private static synchronized PreparedStatement getStatementLastCards() throws SQLException {
+        if (statementLastCards == null) {
+            statementLastCards = DatabaseHelper.getConnection().prepareStatement(
+                    "SELECT CARD.ID, CARD.TITLE, CARD.FRONT, CARD.BACK, CARD.CREATE_TIME, CARD.LIKE_COUNT, " +
+                            "USER.ID, USER.DISPLAY_NAME, USER.PICTURE " +
+                            "FROM CARD INNER JOIN USER ON USER.ID = CARD.USER_ID " +
+                            "ORDER BY CARD.CREATE_TIME DESC LIMIT ?");
+        }
+        return statementLastCards;
+    }
+
+    /**
      * set the device to statement
      *
      * @param position position in statement
@@ -153,39 +175,6 @@ public class Card {
     }
 
     /**
-     * set card's title to statement from {@link #title}
-     *
-     * @param position position in statement
-     * @throws SQLException on any sql failure
-     */
-    private Card setTitle(PreparedStatement statement, int position) throws SQLException {
-        statement.setString(position, title);
-        return this;
-    }
-
-    /**
-     * set card's front to statement from {@link #front}
-     *
-     * @param position position in statement
-     * @throws SQLException on any sql failure
-     */
-    private Card setFront(PreparedStatement statement, int position) throws SQLException {
-        statement.setString(position, front);
-        return this;
-    }
-
-    /**
-     * set card's back to statement from {@link #back}
-     *
-     * @param position position in statement
-     * @throws SQLException on any sql failure
-     */
-    private Card setBack(PreparedStatement statement, int position) throws SQLException {
-        statement.setString(position, back);
-        return this;
-    }
-
-    /**
      * @param udk the devices that this card has been added from
      * @return a new instance of {@link ir.khaled.myleitner.response.Response} with result of true
      * @throws Exception on any failure
@@ -201,35 +190,13 @@ public class Card {
             statement.setNull(2, Types.INTEGER);
         else setUser(statement, 2, userId);
 
-        setTitle(statement, 3);
-        setFront(statement, 4);
-        setBack(statement, 5);
+        statement.setString(3, title);
+        statement.setString(4, front);
+        statement.setString(5, back);
 
         //execute insert sql to database by statement
         statement.executeUpdate();
 
         return Response.success(true);
-    }
-
-    /**
-     * @return singleton instance of PreparedStatement to addCard to database
-     * @throws SQLException on any sql failure
-     */
-    private static synchronized PreparedStatement getStatementAddCard() throws SQLException {
-        if (statementAddCard == null) {
-            statementAddCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO CARD (DEVICE_UDK, USER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?)");
-        }
-        return statementAddCard;
-    }
-
-    private static synchronized PreparedStatement getStatementLastCards() throws SQLException {
-        if (statementLastCards == null) {
-            statementLastCards = DatabaseHelper.getConnection().prepareStatement(
-                    "SELECT CARD.ID, CARD.TITLE, CARD.FRONT, CARD.BACK, CARD.CREATE_TIME, CARD.LIKE_COUNT, " +
-                            "USER.ID, USER.DISPLAY_NAME, USER.PICTURE " +
-                            "FROM CARD INNER JOIN USER ON USER.ID = CARD.USER_ID " +
-                            "ORDER BY CARD.CREATE_TIME DESC LIMIT ?");
-        }
-        return statementLastCards;
     }
 }
