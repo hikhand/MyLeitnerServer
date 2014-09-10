@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import ir.khaled.myleitner.Helper.DatabaseHelper;
+import ir.khaled.myleitner.Helper.Statements;
 import ir.khaled.myleitner.response.Response;
 
 /**
@@ -17,13 +17,6 @@ public class Device {
     public static final String COLUMN_ID = "ID";
     public static final String PARAM_UDK = "udk";
     private static final String PARAM_DEVICE_INFO = "deviceInfo";
-    private static PreparedStatement statementDeviceCheck;
-    private static PreparedStatement statementRegisterDevice;
-    /**
-     * Statement to get deviceId from UDK
-     */
-    private static PreparedStatement statementDeviceId;
-    private static PreparedStatement statementAssignUser;
     private static Gson gson = new Gson();
     public int id;
     public String udk;
@@ -52,7 +45,7 @@ public class Device {
             return response;
         }
 
-        PreparedStatement statement = getStatementRegisterDevice();
+        PreparedStatement statement = Statements.registerDevice();
         statement.setString(1, deviceInfo.system.udk);
         statement.setInt(2, deviceInfo.display.densityDpi);
         statement.setDouble(3, deviceInfo.display.size_inches);
@@ -93,7 +86,7 @@ public class Device {
      * @throws SQLException on any sql failure
      */
     public static int getDeviceId(String udk) throws SQLException {
-        PreparedStatement statement = getStatementDeviceId();
+        PreparedStatement statement = Statements.getDeviceId();
         statement.setString(1, udk);
         ResultSet resultSet = statement.executeQuery();
 
@@ -113,7 +106,7 @@ public class Device {
      * @return true if device is valid else otherwise
      */
     private static boolean isDeviceValid(String udk) throws SQLException {
-        PreparedStatement statement = getStatementDeviceCheck();
+        PreparedStatement statement = Statements.checkDevice();
         statement.setString(1, udk);
         ResultSet resultSet = statement.executeQuery();
 
@@ -138,7 +131,7 @@ public class Device {
      * @throws SQLException on any sql failure
      */
     public static Response<Boolean> assignUserToDevice(int userId, String UDK) throws SQLException {
-        PreparedStatement statement = getStatementAssignUser();
+        PreparedStatement statement = Statements.assignUserToDevice();
         statement.setInt(1, userId);
         statement.setString(2, UDK);
 
@@ -146,35 +139,6 @@ public class Device {
         statement.executeUpdate();
 
         return Response.success(true);
-    }
-
-
-    private static synchronized PreparedStatement getStatementRegisterDevice() throws SQLException {
-        if (statementRegisterDevice == null) {
-            statementRegisterDevice = DatabaseHelper.getConnection().prepareStatement("INSERT INTO DEVICE (UDK, DENSITY_DPI, SIZE_INCHES, HEIGHT, DENSITY, WIDTH, XDPI, YDPI, STORAGE_EXTERNAL, STORAGE_EXTERNAL_FREE, STORAGE_INTERNAL, RAM_SIZE, CPU_ABI, CPU_ABI2, MAX_FREQUENCY, CORES, ANDROID_ID, BLUETOOTH_ADDRESS, BOARD, BRAND, DEVICE_NAME, DISPLAY_NAME, LABEL, IMEI, MANUFACTURE, MODEL, PRODUCT, WLAN_ADDRESS, SDK_VERSION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
-        }
-        return statementRegisterDevice;
-    }
-
-    private static synchronized PreparedStatement getStatementDeviceId() throws SQLException {
-        if (statementDeviceId == null) {
-            statementDeviceId = DatabaseHelper.getConnection().prepareStatement("SELECT ID FROM device WHERE UDK = ?");
-        }
-        return statementDeviceId;
-    }
-
-    private static synchronized PreparedStatement getStatementDeviceCheck() throws SQLException {
-        if (statementDeviceCheck == null) {
-            statementDeviceCheck = DatabaseHelper.getConnection().prepareStatement("SELECT UDK FROM DEVICE WHERE UDK=?");
-        }
-        return statementDeviceCheck;
-    }
-
-    private static synchronized PreparedStatement getStatementAssignUser() throws SQLException {
-        if (statementAssignUser == null) {
-            statementAssignUser = DatabaseHelper.getConnection().prepareStatement("UPDATE DEVICE SET USER_ID = ? WHERE UDK = ?");
-        }
-        return statementAssignUser;
     }
 
     public class DeviceInfo {

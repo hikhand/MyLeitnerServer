@@ -4,8 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import ir.khaled.myleitner.Helper.DatabaseHelper;
-import ir.khaled.myleitner.Helper.ErrorHelper;
+import ir.khaled.myleitner.Helper.Errors;
+import ir.khaled.myleitner.Helper.Statements;
 import ir.khaled.myleitner.Helper.Util;
 import ir.khaled.myleitner.response.Response;
 
@@ -19,14 +19,6 @@ public class User {
     public static final String PARAM_EMAIL = "email";
     public static final int NO_USER = 0;
     public static final int PASSWORD_MIN_LENGTH = 6;
-    private static PreparedStatement statementLogin;
-    private static PreparedStatement statementRegister;
-    private static PreparedStatement statementRegisterCheck;
-    /**
-     * Statement to get serId from UDK
-     */
-    private static PreparedStatement statementUserId;
-    private static PreparedStatement statementAssignDevice;
 
     public int id;
     public String firstName;
@@ -39,7 +31,7 @@ public class User {
     public String password;
 
     public static int getUserId(String udk) throws SQLException {
-        PreparedStatement statement = getStatementUserId();
+        PreparedStatement statement = Statements.getUserId();
         statement.setInt(1, Device.getDeviceId(udk));
 
         ResultSet resultSet = statement.executeQuery();
@@ -56,9 +48,9 @@ public class User {
         String password = request.getParamValue(PARAM_PASSWORD);
 
         if (Util.isEmpty(username))
-            return Response.error(ErrorHelper.LOGIN_MISSING_PARAM_USERNAME, "missing param 'username' (as for now is email)");
+            return Response.error(Errors.MISSING_PARAM, Errors.messageMissingParam(PARAM_USERNAME) + "(as for now is email)");
         if (Util.isEmpty(password))
-            return Response.error(ErrorHelper.LOGIN_MISSING_PARAM_PASSWORD, "missing param 'password'");
+            return Response.error(Errors.MISSING_PARAM, Errors.messageMissingParam(PARAM_PASSWORD));
 
         Object object = validateUser(username, password, false);
         if (object instanceof User) {//user successfully logged in
@@ -66,9 +58,9 @@ public class User {
             assignDeviceAndUser(loggedInUser.id, request.getUDK());
             return Response.success(loggedInUser);
         } else if (object instanceof Integer) {//no user with the given username or email exists
-            return Response.error(ErrorHelper.USER_DOESNT_EXIST, "no user with the given username or email exists");
+            return Response.error(Errors.USER_DOESNT_EXIST, "no user with the given username or email exists");
         } else {//username and password didn't match
-            return Response.error(ErrorHelper.WRONG_USERNAME_PASSWORD, "username or password is wrong");
+            return Response.error(Errors.WRONG_USERNAME_PASSWORD, "username or password is wrong");
         }
     }
 
@@ -79,20 +71,20 @@ public class User {
         String email = request.getParamValue(PARAM_EMAIL);
 
         if (Util.isEmpty(udk))//if param udk is missing from request
-            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_UDK, "missing param 'udk'");
+            return Response.error(Errors.MISSING_PARAM, Errors.messageMissingParam("udk"));
         if (Util.isEmpty(displayName))//if param displayName is missing from request
-            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_DISPLAY_NAME, "missing param 'displayName'");
+            return Response.error(Errors.MISSING_PARAM, Errors.messageMissingParam(PARAM_DISPLAY_NAME));
         if (Util.isEmpty(email))//if param email is missing from request
-            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_EMAIL, "missing param 'email'");
+            return Response.error(Errors.MISSING_PARAM, Errors.messageMissingParam(PARAM_EMAIL));
         if (Util.isEmpty(password))//if param password is missing from request
-            return Response.error(ErrorHelper.REGISTER_MISSING_PARAM_PASSWORD, "missing param 'password'");
+            return Response.error(Errors.MISSING_PARAM, Errors.messageMissingParam(PARAM_PASSWORD));
         if (password.length() < 6)//if password is not strong enough
-            return Response.error(ErrorHelper.REGISTER_WEAK_PASSWORD, "password length is less than " + PASSWORD_MIN_LENGTH);
+            return Response.error(Errors.REGISTER_WEAK_PASSWORD, "password length is less than " + PASSWORD_MIN_LENGTH);
 
         //if everything from the request is alright.
         //if an user with the given email exists
         if (userAlreadyExist(email))
-            return Response.error(ErrorHelper.REGISTER_EMAIL_ALREADY_EXISTS, "an user with the given email already exists");
+            return Response.error(Errors.REGISTER_EMAIL_ALREADY_EXISTS, "an user with the given email already exists");
 
         User user = new User();
         user.email = email;
@@ -106,10 +98,32 @@ public class User {
             assignDeviceAndUser(loggedInUser.id, request.getUDK());
             return Response.success(loggedInUser);
         } else if (object instanceof Integer) {//no user with the given username or email exists
-            return Response.error(ErrorHelper.USER_DOESNT_EXIST, "no user with the given username or email exists");
+            return Response.error(Errors.USER_DOESNT_EXIST, "no user with the given username or email exists");
         } else {//username and password didn't match
-            return Response.error(ErrorHelper.WRONG_USERNAME_PASSWORD, "username or password is wrong");
+            return Response.error(Errors.WRONG_USERNAME_PASSWORD, "username or password is wrong");
         }
+    }
+
+    /**
+     * checks whether user is logged in on the asked device or not.
+     * @param userId the user to be check whether is logged in or not
+     * @param udk the device to check if user is logged in on or not.
+     * @return true if the asked user is logged in on the device.
+     * @throws SQLException on any sql failure
+     */
+    public static boolean isUserLoggedIn(int userId, String udk) throws SQLException {
+        PreparedStatement statement = Statements.loginCheck();
+        statement.setString(1, udk);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        //if result set is empty meaning no user is login return false.
+        if (!resultSet.next())
+            return false;
+
+        //if the logged in user id is the same as the asked one then return true.
+        int loggedInUserId = resultSet.getInt("USER_ID");
+        return loggedInUserId == userId;
     }
 
     /**
@@ -119,7 +133,7 @@ public class User {
      * @return true if an user with the same email exists otherwise false
      */
     private static boolean userAlreadyExist(String email) throws SQLException {
-        PreparedStatement statement = getStatementRegisterCheck();
+        PreparedStatement statement = Statements.userExists();
         statement.setString(1, email);
 
         ResultSet resultSet = statement.executeQuery();
@@ -140,7 +154,7 @@ public class User {
      * @throws SQLException on any sql failure
      */
     public static Response<Boolean> assignDeviceToUser(int userId, String udk) throws SQLException {
-        PreparedStatement statement = getStatementAssignDevice();
+        PreparedStatement statement = Statements.assignDeviceToUser();
         statement.setString(1, udk);
         statement.setInt(2, userId);
 
@@ -165,11 +179,11 @@ public class User {
      *
      * @param username user's email address or user's unique username
      * @param password user's password
-     * @return if username and password matches {@link User}, if no such user exists {@link ir.khaled.myleitner.Helper.ErrorHelper#USER_DOESNT_EXIST}
+     * @return if username and password matches {@link User}, if no such user exists {@link ir.khaled.myleitner.Helper.Errors#USER_DOESNT_EXIST}
      * and if username and password don't match returns {@code false}
      */
     private static Object validateUser(String username, String password, boolean passwordHashed) throws SQLException {
-        PreparedStatement statement = getStatementLogin();
+        PreparedStatement statement = Statements.login();
         statement.setString(1, username);
 
         ResultSet resultSet = statement.executeQuery();
@@ -193,44 +207,10 @@ public class User {
             }
         } else {
             resultSet.close();
-            return ErrorHelper.USER_DOESNT_EXIST;
+            return Errors.USER_DOESNT_EXIST;
         }
     }
 
-    private static synchronized PreparedStatement getStatementLogin() throws SQLException {
-        if (statementLogin == null) {
-            statementLogin = DatabaseHelper.getConnection().prepareStatement("SELECT * FROM USER WHERE EMAIL_ADDRESS = ?");
-        }
-        return statementLogin;
-    }
-
-    private static synchronized PreparedStatement getStatementUserId() throws SQLException {
-        if (statementUserId == null) {
-            statementUserId = DatabaseHelper.getConnection().prepareStatement("SELECT USER_ID FROM DEVICE WHERE ID = ?");
-        }
-        return statementUserId;
-    }
-
-    private static synchronized PreparedStatement getStatementAssignDevice() throws SQLException {
-        if (statementAssignDevice == null) {
-            statementAssignDevice = DatabaseHelper.getConnection().prepareStatement("UPDATE USER SET DEVICE_UDK = ? WHERE ID = ?");
-        }
-        return statementAssignDevice;
-    }
-
-    private static synchronized PreparedStatement getStatementRegister() throws SQLException {
-        if (statementRegister == null) {
-            statementRegister = DatabaseHelper.getConnection().prepareStatement("INSERT INTO USER (DEVICE_UDK, DISPLAY_NAME, PASSWORD, EMAIL_ADDRESS) VALUES (?, ?, ?, ?)");
-        }
-        return statementRegister;
-    }
-
-    private static synchronized PreparedStatement getStatementRegisterCheck() throws SQLException {
-        if (statementRegisterCheck == null) {
-            statementRegisterCheck = DatabaseHelper.getConnection().prepareStatement("SELECT EMAIL_ADDRESS FROM USER WHERE EMAIL_ADDRESS = ?");
-        }
-        return statementRegisterCheck;
-    }
 
     /**
      * saves user into database <b>password must not be hashed</b>
@@ -239,7 +219,7 @@ public class User {
      * @throws SQLException on any sql failure
      */
     private void saveUser(String udk) throws SQLException {
-        PreparedStatement statement = getStatementRegister();
+        PreparedStatement statement = Statements.register();
         statement.setString(1, udk);
         statement.setString(2, displayName);
         statement.setString(3, Util.md5(password));

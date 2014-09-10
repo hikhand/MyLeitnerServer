@@ -5,14 +5,25 @@ import java.io.OutputStreamWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import ir.khaled.myleitner.log.WebserviceLog;
+import ir.khaled.myleitner.log.RequestLog;
 import ir.khaled.myleitner.model.Card;
 import ir.khaled.myleitner.model.Device;
 import ir.khaled.myleitner.model.LastChanges;
+import ir.khaled.myleitner.model.Leitner;
 import ir.khaled.myleitner.model.Request;
 import ir.khaled.myleitner.model.User;
 import ir.khaled.myleitner.model.Welcome;
 import ir.khaled.myleitner.response.Response;
+
+import static ir.khaled.myleitner.Helper.Errors.EXCEPTION_ADD_CARD;
+import static ir.khaled.myleitner.Helper.Errors.EXCEPTION_CREATE_LEITNER;
+import static ir.khaled.myleitner.Helper.Errors.EXCEPTION_LOGIN_USER;
+import static ir.khaled.myleitner.Helper.Errors.EXCEPTION_REGISTER_USER;
+import static ir.khaled.myleitner.Helper.Errors.INVALID_REQUEST_OBJECT;
+import static ir.khaled.myleitner.Helper.Errors.NO_SUCH_METHOD;
+import static ir.khaled.myleitner.Helper.Errors.SQL_DEVICE;
+import static ir.khaled.myleitner.Helper.Errors.UNKNOWN_DEVICE;
+import static ir.khaled.myleitner.Helper.Util.exceptionTraceToString;
 
 /**
  * Created by khaled.bakhtiari on 5/1/2014.
@@ -26,6 +37,8 @@ public class RequestHandler {
     private static final String LAST_CARDS = "lastCards";
     private static final String LOGIN = "login";
     private static final String REGISTER = "register";
+    private static final String CREATE_LEITNER = "createLeitner";
+    private static final String ASSIGN_TO_LEITNER = "assignToLeitner";
 
     private Request request;
     private OutputStreamWriter streamWriter;
@@ -34,7 +47,6 @@ public class RequestHandler {
         this.request = request;
         this.streamWriter = streamWriter;
     }
-
 
     /**
      * resolves a method from the request.
@@ -92,6 +104,15 @@ public class RequestHandler {
                 target = request.getParamValue(User.PARAM_EMAIL);
                 break;
 
+            case CREATE_LEITNER:
+                handleCreateLeitner();
+                target = request.getParamValue(Leitner.PARAM_NAME);
+                break;
+
+            case ASSIGN_TO_LEITNER:
+                handleAssignToLeitner();
+                break;
+
             default:
                 handleNoSuchMethod();
                 return true;
@@ -104,7 +125,7 @@ public class RequestHandler {
 
     private void logRequest(String target, int takenTime) throws IOException {
         try {
-            WebserviceLog.saveLog(request.getUDK(), request.requestName, target, takenTime);
+            RequestLog.saveLog(request.getUDK(), request.requestName, target, takenTime);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -133,7 +154,7 @@ public class RequestHandler {
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            response = Response.error(ErrorHelper.SQL_DEVICE, "error registerDevice. error: " + e.toString());
+            response = Response.error(SQL_DEVICE, "error registerDevice. error: " + exceptionTraceToString(e));
             response.sendResponse(streamWriter);
         }
     }
@@ -144,7 +165,7 @@ public class RequestHandler {
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            Response response = Response.error(ErrorHelper.EXCEPTION_ADD_CARD, "Exception addCard. error: " + e.toString());
+            Response response = Response.error(EXCEPTION_ADD_CARD, "Exception addCard. error: " + exceptionTraceToString(e));
             response.sendResponse(streamWriter);
         }
     }
@@ -158,7 +179,7 @@ public class RequestHandler {
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            Response response = Response.error(ErrorHelper.EXCEPTION_ADD_CARD, "Exception lastCards. error: " + e.toString());
+            Response response = Response.error(EXCEPTION_ADD_CARD, "Exception lastCards. error: " + exceptionTraceToString(e));
             response.sendResponse(streamWriter);
         }
     }
@@ -174,13 +195,13 @@ public class RequestHandler {
             if (Device.isDeviceValid(request)) {
                 return true;
             } else {
-                Response response = Response.error(ErrorHelper.UNKNOWN_DEVICE, "the device is unknown!");
+                Response response = Response.error(UNKNOWN_DEVICE, "the device is unknown!");
                 response.sendResponse(streamWriter);
                 return false;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            Response response = Response.error(ErrorHelper.SQL_DEVICE, "error performing SQL operation for deviceCheck. error: " + e.toString());
+            Response response = Response.error(SQL_DEVICE, "error performing SQL operation for deviceCheck. error: " + exceptionTraceToString(e));
             response.sendResponse(streamWriter);
             return false;
         }
@@ -192,7 +213,7 @@ public class RequestHandler {
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            Response response = Response.error(ErrorHelper.EXCEPTION_LOGIN_USER, "Exception while logging in user: " + e.toString());
+            Response response = Response.error(EXCEPTION_LOGIN_USER, "Exception while logging in user: " + exceptionTraceToString(e));
             response.sendResponse(streamWriter);
         }
     }
@@ -203,22 +224,43 @@ public class RequestHandler {
             response.sendResponse(streamWriter);
         } catch (Exception e) {
             e.printStackTrace();
-            Response response = Response.error(ErrorHelper.EXCEPTION_REGISTER_USER, "Exception while registering user: " + e.toString());
+            Response response = Response.error(EXCEPTION_REGISTER_USER, "Exception while registering user: " + exceptionTraceToString(e));
             response.sendResponse(streamWriter);
         }
     }
 
+    private void handleCreateLeitner() throws IOException {
+        try {
+            Response<Boolean> response = Leitner.create(request);
+            response.sendResponse(streamWriter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Response response = Response.error(EXCEPTION_CREATE_LEITNER, "Exception while trying to create a leitner: " + exceptionTraceToString(e));
+            response.sendResponse(streamWriter);
+        }
+    }
+
+    private void handleAssignToLeitner() throws IOException {
+        try {
+            Response<Boolean> response = Card.assignToLeitner(request);
+            response.sendResponse(streamWriter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Response response = Response.error(EXCEPTION_CREATE_LEITNER, "Exception while trying to assign card to leitner: " + exceptionTraceToString(e));
+            response.sendResponse(streamWriter);
+        }
+    }
 
     /*
      * ERRORS
      */
     private void handleNoSuchMethod() throws IOException {
-        Response response = Response.error(ErrorHelper.NO_SUCH_METHOD, "no such method exists to handle the request.");
+        Response response = Response.error(NO_SUCH_METHOD, "no such method exists to handle the request.");
         response.sendResponse(streamWriter);
     }
 
     private void handleInvalidRequest() throws IOException {
-        Response response = Response.error(ErrorHelper.INVALID_REQUEST_OBJECT, "the request object is invalid and can't be handled");
+        Response response = Response.error(INVALID_REQUEST_OBJECT, "the request object is invalid and can't be handled");
         response.sendResponse(streamWriter);
     }
 

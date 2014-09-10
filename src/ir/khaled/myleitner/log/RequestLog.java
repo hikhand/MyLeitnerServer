@@ -3,14 +3,13 @@ package ir.khaled.myleitner.log;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import ir.khaled.myleitner.Helper.DatabaseHelper;
+import ir.khaled.myleitner.Helper.Statements;
 import ir.khaled.myleitner.model.User;
 
 /**
  * Created by khaled on 9/6/2014.
  */
-public class WebserviceLog {
-    private static PreparedStatement statementAddLog;
+public class RequestLog {
 //    public int id;
 //    public String action;
 //    public String target;
@@ -34,7 +33,7 @@ public class WebserviceLog {
      * @throws SQLException on any sql failure
      */
     public static void saveLog(String udk, String action, String target, int takenTime) throws SQLException {
-        PreparedStatement statement = getStatementLogin();
+        PreparedStatement statement = Statements.addLog();
         statement.setInt(1, User.getUserId(udk));
         statement.setString(2, udk);
         statement.setString(3, action);
@@ -44,10 +43,5 @@ public class WebserviceLog {
         statement.executeUpdate();
     }
 
-    private static synchronized PreparedStatement getStatementLogin() throws SQLException {
-        if (statementAddLog == null) {
-            statementAddLog = DatabaseHelper.getConnection().prepareStatement("INSERT INTO LOG (USER_ID, UDK, ACTION, TARGET, TAKEN_TIME) VALUES (?, ?, ?, ?, ?)");
-        }
-        return statementAddLog;
-    }
+
 }
