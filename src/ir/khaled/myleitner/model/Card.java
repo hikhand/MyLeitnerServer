@@ -176,9 +176,10 @@ public class Card {
             statement.setNull(2, Types.INTEGER);
         else setUser(statement, 2, userId);
 
-        statement.setString(3, title);
-        statement.setString(4, front);
-        statement.setString(5, back);
+        statement.setInt(3, leitnerId);
+        statement.setString(4, title);
+        statement.setString(5, front);
+        statement.setString(6, back);
 
         //execute insert sql to database by statement
         statement.executeUpdate();
