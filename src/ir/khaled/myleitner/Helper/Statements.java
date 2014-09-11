@@ -74,7 +74,7 @@ public class Statements {
 
     public static synchronized PreparedStatement addCard() throws SQLException {
         if (addCard == null)
-            addCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO CARD (DEVICE_UDK, USER_ID, LEITNER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?)");
+            addCard = DatabaseHelper.getConnection().prepareStatement("INSERT INTO CARD (DEVICE_UDK, USER_ID, LEITNER_ID, TITLE, FRONT, BACK) VALUES (?, ?, ?, ?, ?, ?)");
         return addCard;
     }
 
