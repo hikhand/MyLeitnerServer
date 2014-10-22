@@ -139,9 +139,8 @@ public class Card {
         PreparedStatement statement = Statements.lastCards();
         statement.setInt(1, limit);
 
-        ArrayList<Card> lastCards = new ArrayList<Card>();
+        ArrayList<Card> lastCards = new ArrayList<>();
         ResultSet resultSet = statement.executeQuery();
-        resultSet.first();
         while (resultSet.next()) {
             Card card = new Card();
             card.id = resultSet.getInt(1);
@@ -176,7 +175,9 @@ public class Card {
             statement.setNull(2, Types.INTEGER);
         else setUser(statement, 2, userId);
 
-        statement.setInt(3, leitnerId);
+        if (leitnerId == Leitner.NO_LEITNER)
+            statement.setNull(3, Types.INTEGER);
+        else statement.setInt(3, leitnerId);
         statement.setString(4, title);
         statement.setString(5, front);
         statement.setString(6, back);

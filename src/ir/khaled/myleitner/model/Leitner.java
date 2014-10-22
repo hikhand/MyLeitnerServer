@@ -13,6 +13,7 @@ import ir.khaled.myleitner.response.Response;
  * Created by khaled.bakhtiari on 5/2/2014.
  */
 public class Leitner {
+    public static final int NO_LEITNER = 0;
     public static final String PARAM_USER_ID = "userId";
     public static final String PARAM_NAME = "name";
     public static final String PARAM_LEITNER_ID = "leitnerId";

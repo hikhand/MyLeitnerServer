@@ -30,7 +30,7 @@ public class LogHelper {
 
         System.out.println("client#" + clientId + " " + log);
     }
-    public static Logger getLoggerSocketConnection() {
+    private static Logger getLoggerSocketConnection() {
         Logger logger = Logger.getLogger(SocketConnection.class.getName());
         logger.addHandler(getFileHandler(SocketConnection.class.getName()));
         logger.setLevel(Level.ALL);
